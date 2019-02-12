@@ -1,0 +1,46 @@
+::ng-deep h2{
+    font-family: Segoe UI;
+    font-size: 22px;
+    color:#702082;
+}
+.mat-dialog-container {
+    display: block;
+    padding: 24px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    width: 50%;
+    height: 50%;
+    min-height: inherit;
+    max-height: inherit;
+    margin-left: 97%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+.modal-container {
+    width: 80%;
+    margin-left:15px;
+  }
+.btn-margin{
+    margin-left: 12%;
+}
+.left-margin{
+    margin-left: 50%!important;
+    margin-top: 15px;
+}
+/* .dialog-container {
+    text-align: center;
+} */
+.top-margin{
+    margin-top: 15px;
+}
+.example-container {
+    width: 75%
+  } 
+.example-container > * {
+    width:75%;
+  }
+

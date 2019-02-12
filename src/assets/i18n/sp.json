@@ -1,0 +1,308 @@
+{
+    "requestType": {
+        "policyType": "Tipo de politica",
+        "newPolicy": "Nueva politica",
+        "renewal": "Renovación",
+        "quote": "Citar",
+        "claim": "Reclamación",
+        "claimDate": "Fecha de reclamo",
+        "policyNumber": "Número de póliza",
+        "claimDetails": "Reclamar detalles",
+        "error": "Fecha de reclamo requerida"
+    },
+    "Reqired":{
+        "Error": "Fecha de reclamación requerida"
+    },
+    "previousAnswer": "RESPUESTA ANTERIOR",
+    "helpText": {
+        "example": "Ejemplo:",
+        "note": "Nota:"
+    },
+    "queryInformation": {
+        "queryInfo": "Proporcionar más información"
+    },
+     
+    "buttons": {
+        "uploadDoc": "Subir documento",
+        "cancel": "Cancelar",
+        "reset": "Reiniciar",
+        "submit": "Enviar",
+        "back": "Espalda",
+        "backToList": "Volver a la lista"
+    },
+    "gridControl": {
+        "name": "Nombre",
+        "nationality": "Nacionalidad / Lugar de incorporación"
+    },
+    
+    "controlledGoods": {
+        "title": "Formulario de sanciones por el movimiento de mercancías controladas.",
+        "qOne": {
+            "text": "¿Qué son los bienes militares, controlados o de doble uso?",
+            "help": "Enumere los nombres de todos los productos aquí, por ejemplo, municiones, misiles guiados, rifles de asalto, placas de circuitos, software de sistemas de guía, llantas de repuesto para vehículos militares",
+            "error": "Detalles de bienes requeridos",
+            "placeholder": "Detalles de bienes"
+        },
+        
+        "qTwo": {
+            "text": "¿De qué país proceden los bienes?",
+            "help": "",
+            "error": "País de origen requerido",
+            "placeholder": "Fuente de bienes",
+            "twoSubOne": {
+                "text": "¿A qué país van las mercancías?",
+                "help": "",
+                "error": "País de destino requerido",
+                "placeholder": "Destino de las mercancias"
+            },
+            "twoSubTwo": {
+                "text": "¿Los bienes van a través de otro país?",
+                "help": "",
+                "error": "Bienes a través de detalles requeridos",
+                "placeholder": "A través del detalle del país"
+            }
+        },
+         
+        "qThree": {
+            "text": "¿Cuáles son los nombres del cliente y otras partes involucradas en la transacción?",
+            "help": "",
+            "error": "",
+            "placeholder": "",
+            "threeSubOne": {
+                "text": "El cliente / (re) asegurado:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubTwo": {
+                "text": "Otros terceros involucrados en la transacción.",
+                "help": "Por ejemplo, incluya a terceros asesores, subsidiarias de terceros o empresas conjuntas.",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qFour": {
+            "text": "¿Cuál es el nombre del destinatario de la mercancía?",
+            "help": "por ejemplo, el Ministerio de Defensa, Alemania",
+            "error": "Detalle de los destinatarios de las mercancías requerido",
+            "placeholder": "Destinatarios de bienes"
+        },
+        "qFive": {
+            "text": "Use este cuadro para proporcionar información útil para ayudar al equipo de sanciones a evaluar su consulta.",
+            "help": "por ejemplo, ¿el cliente le ha otorgado un permiso de control de exportación o está operando bajo una licencia general? ¿Es este un contrato de la ONU o la OTAN?",
+            "error": "",
+            "placeholder": ""
+        }
+    },
+    
+    "standardsSanction":{
+        "title": "Formulario de Sanciones por Bienes",
+
+        "qOne":
+        {
+            "text": "¿Cuál es el nombre de su entidad legal, área de negocio y ubicación de la oficina?",
+             "help":"CRB (GB) - Transporte (marítimo) o HCB (GB) - Londres o IRR (Willis Re) - International APMETA",
+             "error":"",
+             "placeholder":""
+        } ,
+        "qTwo": {
+            "text": "Fecha en que la póliza entrará en vigor y la duración de la póliza.",
+            "help": "1 de enero por 12 meses",
+            "error": {"inceptionDate":"Fecha de inicio requerida",
+                     "duration":"Duración requerida"
+                    },
+            "placeholder": {"inceptionDatePlaceholder":"Fecha de inicio",
+                            "duarationPlaceholder":"Duración"
+            }
+        },  
+
+        "qThree":{
+            "text":"¿Cuáles son los nombres de las partes involucradas en la (re) póliza de seguro? (Incluyendo lugar de incorporación o nacionalidad)?",
+            "help":"Si conoce algún tipo de propiedad o control por parte de una persona o entidades, incluido un tercero de un país sancionado, incluya esta información.",
+            "error":"",
+            "placeholder":"",
+            "threeSubOne":{
+                "text":"El (los) asegurado (s) / asegurado (s) subyacente (s):",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubTwo":{
+                "text":"El (los) reasegurado (s) / retrocedante (s): (cuando corresponda",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubThree":{
+                "text":"Cualquier otra entidad o persona asegurada o beneficiaria de la póliza.",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubFour":{
+                "text":"Nombre del cliente WTW si es diferente de 3.1 o 3.2 arriba",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            }
+
+        },
+        "qFour":{
+            "text":"¿Cuál es el nombre del país o países sancionados de la lista anterior?",
+            "help":"",
+            "error":"Países sancionados requeridos",
+            "placeholder":"País (es) sancionado (s)"
+        },
+        "qFive":{
+            "text":"¿Cuál es el tipo de (re) seguro?",
+            "help":"Carga marítima, D&O, responsabilidad civil.",
+            "error":"Tipo de seguro requerido",
+            "placeholder":"Tipo de seguro"
+        },
+        "qSix":{
+            "text":"¿Cuál es la actividad u operación que se está (re) asegurando?",
+            "help":"Envío de alimentos, reaseguro de pólizas de libro de motor.",
+            "error":"Nombre de actividad requerido",
+            "placeholder":"Actividad / Operación"
+        },
+        "qSeven":{
+            "text":"¿El (re) seguro es una colocación global o es una póliza de riesgo única que cubre solo el País Sancionado que se menciona anteriormente?",
+            "help":"¿Cubre esta política América del Sur, América del Norte y el Caribe o solo Cuba?",
+            "error":"",
+            "placeholder":""
+        },
+        "qEight":{
+            "text":"¿Participan en esta transacción ciudadanos de EE. UU., Compañías de EE. UU., Colegas de WTW de EE. UU. O compañías de WTW de EE. UU.?",
+            "help":"",
+            "error":"",
+            "placeholder":""
+        },
+        "qNine":{
+            "text":"¿Se han tomado decisiones en los EE. UU. (Ya sea en el territorio de los EE. UU. O en el espacio aéreo de los EE. UU.) Sobre esta transacción?",
+            "help":"",
+            "error":"",
+            "placeholder":""
+        },
+        "qTen":{
+            "text":"¿Uso de suscriptores estadounidenses?",
+            "help":"Incluidas las filiales no estadounidenses de los padres de los EE. UU., Por ejemplo, AIG Europe",
+            "error":"",
+            "placeholder":""
+        },
+        "qEleven":{
+            "text":"¿Qué moneda (s) se utilizará para las primas y reclamaciones?",
+            "help":"",
+            "error":{"errorPremium":"Al menos una moneda premium requerida",
+            "errorClaim":"Al menos una reclamación de moneda requerida"
+            },
+            "placeholder":{"placeholderPremium":"Las primas",
+                            "placeholderClaim":"Reclamaciones "
+                        }
+        },
+         "qTwelve":{
+            "text":"Responda las siguientes preguntas de exportación, si la respuesta a cualquiera de las siguientes es sí, entonces es posible que el Equipo de sanciones deba solicitar más información.n",
+            "help":"",
+            "error":"",
+            "placeholder":"",
+            "twelveSubOne":{
+                "text":"Is the movement of Controlled Goods covered under this policy?",
+                "help":"If yes, please complete the Controlled Goods Form found here",
+                "error":"",
+                "placeholder":""
+            },
+            "twelveSubTwo":{
+                "text":"¿Está cubierto el movimiento de diamantes bajo esta política?",
+                "help":"En caso afirmativo, ¿el cliente le ha proporcionado su certificado de Kimberly?",
+                "error":"",
+                "placeholder":""
+            },
+            "twelveSubThree":{
+                "text":"¿La industria petrolera, petrolera, de gas o petroquímica o el equipo para estas industrias están cubiertos por esta política?",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            }
+        },
+        "qThirteen":{
+            "text":"Use este cuadro para proporcionar información útil para ayudar al equipo de sanciones a evaluar su consulta.",
+            "help":"",
+            "error":"",
+            "placeholder":"Proveer información"
+        }
+    },
+    "ConsultancyServices":
+    {
+        "title":"Formulario de Sanciones por Servicios de Consultoría.",
+
+        "qOne":{
+            "text":"Describa los servicios de consultoría / asesoría que se ofrecen",
+            "help":"",
+            "error":"Detalles de consultoría / asesoría requeridos",
+            "placeholder":"Servicios prestados"
+        },
+        "qTwo":{
+            "text":"¿En qué fecha comenzarán los servicios de consultoría / asesoría?",
+            "help":"",
+            "error":"Se requiere fecha de inicio",
+          "placeholder":"Elija fecha de inicio"
+        },
+        "qThree":{
+            "text":"¿Cuáles son los nombres de las partes a las que se prestan los servicios? (Incluyendo lugar de constitución o nacionalidad)?",
+            "help":"Si conoce algún tipo de propiedad o control por parte de una persona o entidades, incluido un tercero de un país sancionado, incluya esta información.",
+            "error":"",
+            "placeholder":"",
+
+            "threeSubOne":{
+                "text":"El cliente:",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubTwo":{
+                "text":"Cualquier otro tercero involucrado en la transacción.",
+                "help":"Incluya a cualquier tercero a quien se le pueda divulgar nuestro producto de trabajo, otros asesores de terceros, subsidiarias de terceros y empresas conjuntas.",
+                "error":"",
+                "placeholder":""
+            }
+        },
+        "qFour":{
+            "text":"¿Cuál es el nombre del país o países sancionados de la lista anterior?",
+            "help":"",
+            "error":" Países sancionados requeridos",
+            "placeholder":"Paises sancionados"
+        },
+        "qFive":{
+            "text":"¿Participan en esta transacción ciudadanos de EE. UU., Compañías de EE. UU., Colegas de WTW de EE. UU. O compañías de WTW de EE. UU.?",
+            "help":"",
+            "error":"",
+            "placeholder":""
+          
+        },
+        
+        "qSix":{
+            "text":"¿Se han tomado decisiones en los EE. UU. (Ya sea en el territorio de los EE. UU. O en el espacio aéreo de los EE. UU.) Sobre esta transacción?",
+            "help":"Esto incluye las decisiones tomadas y los negocios realizados en los EE. UU. Incluso en vacaciones. Cuba.",
+            "error":"",
+            "placeholder":""
+        },
+        "qSeven":{
+            "text":"¿Qué moneda (s) se utilizará para el pago de los servicios??",
+            "help":"",
+            "error":"Al menos una moneda requerida",
+            "placeholder":"Las primas"
+            
+        },
+        "qEight":{
+            "text":"¿Se preocupan los clientes por el comercio de armas o el movimiento de productos o software militares, controlados o de doble uso?",
+            "help":"En caso afirmativo, proporcione más detalles sobre el cliente y si los servicios que prestará Willis Towers Watson facilitarán el comercio de estos productos o software.",
+            "error":"",
+            "placeholder":""
+        },
+        "qNine":{
+            "text":"Use este cuadro para proporcionar información útil para ayudar al Equipo de Sanciones a evaluar su consulta.",
+            "help":"",
+            "error":"",
+            "placeholder":"Proveer información"
+        }
+    }
+}

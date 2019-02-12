@@ -1,0 +1,318 @@
+{
+    "requestType": {
+        "policyType": "的PolicyType",
+        "newPolicy": "newPolicy",
+        "renewal": "复兴",
+        "quote": "引用",
+        "claim": "要求",
+        "claimDate": "claimDate",
+        "policyNumber": "保单号码",
+        "claimDetails": "claimDetails",
+        "error": "要求的索赔日期"
+    },
+    "previousAnswer": "previousAnswer",
+    "helpText": {
+        "example": "例:",
+        "note": "注意e",
+        "queryInformation": {
+            "queryInfo": "queryInfo"
+        }
+    },
+    "queryInformation": {
+        "queryInfo": "提供更多信息"
+    },
+    "buttons": {
+        "uploadDoc": "上传文件",
+        "cancel": "取消",
+        "reset": " 重启",
+        "submit": "提交",
+        "back": "背部",
+        "backToList": "返回目录"
+    },
+
+    "gridControl": {
+        "name": "名称",
+        "nationality": "国籍"
+    },
+    "controlledGoods": {
+        "title": "受控货物运输制裁表",
+        "qOne": {
+            "text": "什么是军用，控制用品或两用品？",
+            "help": "请列出所有货物的名称，例如弹药，导弹，突击步枪，电路板，制导系统软件，军用车辆备用轮胎",
+            "error": "需要货物详情",
+            "placeholder": "商品详情"
+        },
+        "qTwo": {
+            "text": "这些货物来自哪个国家？",
+            "help": "",
+            "error": "错误",
+            "placeholder": "货源",
+            "twoSubOne": {
+                "text": "货物到哪个国家？",
+                "help": "",
+                "error": "目的地国家/地区",
+                "placeholder": "货物目的地"
+            },
+            "twoSubTwo": {
+                "text": "货物是通过另一个国家进行的吗？",
+                "help": "",
+                "error": "货物需要详细信息",
+                "placeholder": "通过国家细节"
+            }
+        },
+        "qThree": {
+            "text": "交易涉及的客户和其他各方的名称是什么？",
+            "help": "",
+            "error": "",
+            "placeholder": "",
+            "threeSubOne": {
+                "text": "客户/（重新）投保人：",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubTwo": {
+                "text": "参与交易的其他第三方。",
+                "help": "例如，包括，任何第三方顾问，第三方子公司或合资企业",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qFour": {
+            "text": "收货人的名字是什么？",
+            "help": "例如，德国国防部 ",
+            "error": "需要收货人详细信息",
+            "placeholder": "收货人"
+        },
+        "qFive": {
+            "text": "使用此框提供任何有用的信息，以帮助制裁团队评估您的查询",
+            "help": "例如，客户是否向您提供了出口管制许可证，或者他们是否在一般许可证下运营？这是联合国还是北约合同？",
+            "error": "",
+            "placeholder": ""
+        },
+        
+        "footer": {
+            "privecyReminder":"awe",
+            "contact":"联系我们",
+            "review":"训练材料",
+            "law":"版权所有©2018 Willis Towers Watson。版权所有"
+        }
+    },
+    "sideNav":{
+        "home":"test"
+    },
+    "standardsSanction":{
+        "title": "Sanctions for Goods"
+    },
+    "standardsSanction":{
+        "title": "货物制裁表格",
+        "qOne":
+        {
+            "text": "您的法人实体，业务范围和办公地点的名称是什么？",
+             "help":"CRB（GB） - 运输（海运）或HCB（GB） - 伦敦或IRR（Willis Re） - 国际APMETA",
+             "error":"",
+             "placeholder":""
+        } ,
+        "qTwo": {
+            "text": "政策将接受的日期和政策的持续时间",
+            "help": "1月1日为12个月",
+            "error": {"inceptionDate":"需要开始日期",
+                     "duration":"需要的时间"
+                    },
+            "placeholder": {"inceptionDatePlaceholder":"开始日期",
+                            "duarationPlaceholder":"持续时间"
+            }
+        },  
+
+        "qThree":{
+            "text":"（再）保险政策涉及的各方名称是什么？ （包括注册地或国籍）？",
+            "help":"如果您知道某个人或实体（包括来自受制裁国家/地区的任何第三方）的任何所有权或控制权，请包含此信息",
+            "error":"",
+            "placeholder":"",
+            "threeSubOne":{
+                "text":"被保险人/被保险人：",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubTwo":{
+                "text":"再保险/再处理人员:(如适用）",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubThree":{
+                "text":"保险或受益于该保单的任何其他实体或个人。",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubFour":{
+                "text":"如果与上述3.1或3.2不同，WTW客户的名称",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            }
+
+        },
+        "qFour":{
+            "text":"上面列表中受制裁国家的名称是什么？",
+            "help":"",
+            "error":"需要受制裁的国家",
+            "placeholder":"受制裁的国家"
+        },
+        "qFive":{
+            "text":"什么是（再）保险？",
+            "help":"海运货物，D＆O，责任",
+            "error":"需要保险类型",
+            "placeholder":"保险类型"
+        },
+        "qSix":{
+            "text":"被重新投保的活动或运营是什么？",
+            "help":"运送食品，再保险运输政策书",
+            "error":"需要的活动名称",
+            "placeholder":"活动/操作"
+        },
+
+        "qSeven":{
+            "text":"（再）保险是全球性的，还是仅仅涵盖上述受制裁国家的单一风险政策？",
+            "help":"这项政策是否涵盖南美洲，北美洲和加勒比海地区或仅古巴。",
+            "error":"",
+            "placeholder":""
+        },
+        "qEight":{
+            "text":"是否有任何美国公民，美国公司，美国WTW同事或美国WTW公司参与此次交易？",
+            "help":"",
+            "error":"",
+            "placeholder":""
+        },
+        "qNine":{
+            "text":"美国（无论是在美国领土还是美国领空）是否就此项交易作出任何决定？",
+            "help":"",
+            "error":"",
+            "placeholder":""
+        },
+        "qTen":{
+            "text":"使用美国承销商？",
+            "help":"包括美国父母的非美国子公司，例如AIG Europe",
+            "error":"",
+            "placeholder":""
+        },
+        "qEleven":{
+            "text":"保费和索赔将使用哪些货币？",
+            "help":"",
+            "error":{"errorPremium":"至少需要一种优质货币",
+            "errorClaim":"至少一个索赔货币需要"
+            },
+            "placeholder":{"placeholderPremium":"保费",
+                            "placeholderClaim":"声明 "
+                        }
+        },
+         "qTwelve":{
+            "text":"请回答以下出口问题，如果以下任何一个的答案是肯定的，那么制裁小组可能需要询问更多信息",
+            "help":"",
+            "error":"",
+            "placeholder":"",
+            "twelveSubOne":{
+                "text":"本政策是否涵盖受控货物的流动？",
+                "help":"如果是，请填写此处的受控货物表格",
+                "error":"",
+                "placeholder":""
+            },
+            "twelveSubTwo":{
+                "text":"这项政策是否涵盖了钻石的流动？",
+                "help":"如果是，客户是否向您提供了他们的金伯利证书？",
+                "error":"",
+                "placeholder":""
+            },
+            "twelveSubThree":{
+                "text":"本政策是否涵盖这些行业的石油，石油，天然气或石化行业或设备？",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            }
+        },
+        "qThirteen":{
+            "text":"使用此框提供任何有用的信息，以帮助制裁团队评估您的查询",
+            "help":"",
+            "error":"",
+            "placeholder":"提供资料"
+        }
+    },
+    "ConsultancyServices":
+    {
+        "title":"咨询服务的制裁表格",
+
+        "qOne":{
+            "text":"请描述所提供的咨询/咨询服务？",
+            "help":"",
+            "error":"需要咨询/咨询详情",
+            "placeholder":"提供的服务"
+        },
+        "qTwo":{
+            "text":"咨询/咨询服务的日期是什么时候开始的？",
+            "help":"",
+            "error":"需要开始日期",
+          "placeholder":"  选择开始日期"
+        },
+        "qThree":{
+            "text":"提供服务的各方名称是什么？ （包括注册地或国籍）？",
+            "help":"如果您知道某个人或实体（包括来自受制裁国家/地区的任何第三方）的任何所有权或控制权，请包含此信息。",
+            "error":"",
+            "placeholder":"",
+
+            "threeSubOne":{
+                "text":"客户端：",
+                "help":"",
+                "error":"",
+                "placeholder":""
+            },
+            "threeSubTwo":{
+                "text":"参与交易的任何其他第三方.",
+                "help":"包括我们的工作产品可​​能被披露的任何第三方，其他第三方顾问，第三方子公司和合资企业",
+                "error":"",
+                "placeholder":""
+            }
+        },
+        "qFour":{
+            "text":"上面列表中受制裁国家的名称是什么？",
+            "help":"",
+            "error":" 需要受制裁的国家",
+            "placeholder":"受制裁国家"
+        },
+        "qFive":{
+            "text":"是否有任何美国公民，美国公司，美国WTW同事或美国WTW公司参与此次交易？",
+            "help":"",
+            "error":"",
+            "placeholder":""
+          
+        },
+        
+        "qSix":{
+            "text":"美国（无论是在美国领土还是美国领空）是否就此项交易作出任何决定？",
+            "help":"这包括在美国做出的决定和业务，即使在度假时也是如此。古巴。",
+            "error":"",
+            "placeholder":""
+        },
+        "qSeven":{
+            "text":"将使用哪些货币支付服务费用？",
+            "help":"",
+            "error":"至少需要一种货币",
+            "placeholder":"保费"
+            
+        },
+        "qEight":{
+            "text":"客户业务是否涉及军火贸易或军事，受控或两用货物或软件的流动？",
+            "help":"如果是，请提供有关客户的更多详细信息，以及Willis Towers Watson提供的服务是否有助于这些商品或软件的交易。",
+            "error":"",
+            "placeholder":""
+        },
+        "qNine":{
+            "text":"使用此框提供任何有用的信息，以帮助制裁团队评估您的查询。",
+            "help":"",
+            "error":"",
+            "placeholder":"提供资料"
+        }
+    }
+
+}

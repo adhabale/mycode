@@ -1,0 +1,595 @@
+{
+    "requestType": {
+        "policyType": "Type de politique",
+        "newPolicy": "Nouvelle politique",
+        "renewal": "Renouvellement",
+        "quote": "Citation",
+        "claim": "Prétendre",
+        "claimDate": "Date de réclamation",
+        "policyNumber": "Numéro de police",
+        "claimDetails": "Détails de la réclamation"
+    },
+    "required": {
+        "error": "Date de réclamation requise"
+    },
+    "previousAnswer": "RÉPONSE PRÉCÉDENTE",
+    "helpText": {
+        "example": "Exemple:",
+        "note": "Remarque:"
+    },
+    "queryInformation": {
+        "queryInfo": "Fournir des informations supplémentaires"
+    },
+    "serchFilter": {
+        "firstName": "FIrst Name",
+        "policynumber": "Policy"
+    },
+    "buttons": {
+        "uploadDoc": "Télécharger un document",
+        "cancel": "Annuler",
+        "reset": "Réinitialiser",
+        "submit": "Soumettre",
+        "back": "Retour",
+        "backToList": "Retour à la liste",
+        "nextPage": "Page suivante",
+        "previouspage": "Page précédente",
+        "approve": "Approuver",
+        "decline": "Déclin",
+        "raiseQuery": "Élever Question"
+    },
+    "gridControl": {
+        "name": "prénom",
+        "nationality": "Nationalité / Lieu de constitution"
+    },
+    "controlledGoods": {
+        "title": "Formulaire de sanctions pour le mouvement des marchandises contrôlées",
+        "qOne": {
+            "text": "Quels sont les biens militaires, contrôlés ou à double usage?",
+            "help": "Veuillez indiquer ici le nom de toutes les marchandises, par exemple, munitions, missile guidé, fusil d'assaut, cartes de circuit imprimé, logiciel de système de guidage, pneus de rechange pour véhicules militaires",
+            "error": "Détails de la marchandise requis",
+            "placeholder": "Détails des marchandises"
+        },
+        "qTwo": {
+            "text": "De quel pays proviennent les marchandises?",
+            "help": "",
+            "error": "Pays d'origine requis",
+            "placeholder": "Source de marchandises",
+            "twoSubOne": {
+                "text": "Dans quel pays vont les marchandises?",
+                "help": "",
+                "error": "Pays de destination requis",
+                "placeholder": "Destination des marchandises"
+            },
+            "twoSubTwo": {
+                "text": "Les marchandises passent-elles par un autre pays?",
+                "help": "",
+                "error": "Marchandises via les détails requis",
+                "placeholder": "Par pays"
+            }
+        },
+        "qThree": {
+            "text": "Quels sont les noms du client et des autres parties impliquées dans la transaction?",
+            "help": "",
+            "error": "",
+            "placeholder": "",
+            "threeSubOne": {
+                "text": "Le client / (ré) assuré:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubTwo": {
+                "text": "Autres tiers impliqués dans la transaction.",
+                "help": "Par exemple, incluez tous les conseillers tiers, les filiales de tiers ou les coentreprises",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qFour": {
+            "text": "Quel est le nom du destinataire des marchandises?",
+            "help": "par exemple, le ministère de la Défense, Allemagne",
+            "error": "Les destinataires des marchandises sont requis",
+            "placeholder": "Destinataires de marchandises"
+        },
+        "qFive": {
+            "text": "Utilisez cette case pour fournir toute information utile pouvant aider l'équipe des sanctions à évaluer votre requête.",
+            "help": "Par exemple, le client vous a-t-il fourni un permis de contrôle des exportations ou opère-t-il sous une licence générale? Est-ce un contrat de l'ONU ou de l'OTAN?",
+            "error": "",
+            "placeholder": ""
+        }
+    },
+    "standardsSanction": {
+        "title": "Formulaire de sanctions pour marchandises",
+        "provide": {
+            "details": "Fournir des noms",
+            "decision": "Veuillez expliquer les décisions prises aux États-Unis.."
+        },
+        "qOne": {
+            "text": "Quel est le nom de votre entité juridique, de votre secteur d'activité et de l'emplacement de votre bureau?",
+            "help": "CRB (GB) - Transports maritimes ou HCB (GB) - Londres ou IRR (Willis Re) - International APMETA",
+            "error": "",
+            "placeholder": "",
+            "answerGrid": {
+                "bUArea": "Zone commerciale",
+                "loaction": "Emplacement du bureau",
+                "legalEntity": "Entité légale WTW"
+            }
+        },
+        "qTwo": {
+            "text": "Date d'entrée en vigueur de la police et durée de celle-ci",
+            "help": "1er janvier pour 12 mois",
+            "error": {
+                "inceptionDate": "Date de création requise",
+                "duration": "Durée requise"
+            },
+            "placeholder": {
+                "inceptionDatePlaceholder": "Date de création",
+                "duarationPlaceholder": "Durée"
+            }
+        },
+        "qThree": {
+            "text": "Quels sont les noms des parties impliquées dans la politique de (ré) assurance? (y compris le lieu de constitution ou la nationalité)?",
+            "help": "Si vous êtes au courant de l'existence d'un droit de propriété ou d'un contrôle exercé par une personne ou une entité, y compris un tiers provenant d'un pays sanctionné, veuillez inclure ces informations.",
+            "error": "",
+            "placeholder": "",
+            "threeSubOne": {
+                "text": "Le ou les assurés / assurés sous-jacents:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubTwo": {
+                "text": "Les réassurés / rétrocédants: (le cas échéant)",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubThree": {
+                "text": "Toute autre entité ou personne assurée ou bénéficiant de la police.",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubFour": {
+                "text": "Nom du client WTW si différent de 3.1 ou 3.2 ci-dessus",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qFour": {
+            "text": "Quel est le nom du ou des pays sanctionnés dans la liste ci-dessus?",
+            "help": "",
+            "error": "Pays sanctionnés requis",
+            "placeholder": "Pays sanctionné (s)"
+        },
+        "qFive": {
+            "text": "Quel est le type de (ré) assurance? ",
+            "help": "fret maritime, D & O, responsabilité",
+            "error": "Type d'assurance requis",
+            "placeholder": "Type d'assurance"
+        },
+        "qSix": {
+            "text": "Quelle est l'activité ou l'opération étant (ré) assurée?",
+            "help": "expédition de nourriture, réassurance du livre de polices",
+            "error": "Nom de l'activité requis",
+            "placeholder": "Activité / Opération"
+        },
+        "qSeven": {
+            "text": "La (ré) assurance est-elle un placement global ou s'agit-il d'une police à risque unique couvrant uniquement le pays sanctionné susmentionné?",
+            "help": "Cette politique couvre-t-elle l'Amérique du Sud, l'Amérique du Nord et les Caraïbes ou simplement Cuba?",
+            "error": "",
+            "placeholder": ""
+        },
+        "Eight": {
+            "text": "Des citoyens américains, des entreprises américaines, des collègues américains de WTW ou des entreprises américaines de WTW sont-ils impliqués dans cette transaction?",
+            "help": "",
+            "error": "",
+            "placeholder": ""
+        },
+        "qNine": {
+            "text": "Des décisions ont-elles été prises aux États-Unis (que ce soit sur le sol américain ou dans l'espace aérien américain) concernant cette transaction?",
+            "help": "",
+            "error": "",
+            "placeholder": ""
+        },
+        "qTen": {
+            "text": "Utilisation de souscripteurs américains?",
+            "help": "Y compris les filiales non américaines de sociétés mères américaines, par exemple, AIG Europe",
+            "error": "",
+            "placeholder": ""
+        },
+        "qEleven": {
+            "text": "Quelle devise sera utilisée pour les primes et les réclamations?",
+            "help": "",
+            "error": {
+                "errorPremium": "Au moins une devise premium requise",
+                "errorClaim": "Au moins une devise de créance requise"
+            },
+            "placeholder": {
+                "placeholderPremium": "Primes",
+                "placeholderClaim": "Réclamations "
+            }
+        },
+        "qTwelve": {
+            "text": "Veuillez répondre aux questions d'exportation suivantes. Si la réponse à l'une des questions ci-dessous est affirmative, l'équipe des sanctions pourrait alors être amenée à demander des informations complémentaires.",
+            "help": "",
+            "error": "",
+            "placeholder": "",
+            "twelveSubOne": {
+                "text": "Le mouvement des marchandises contrôlées est-il couvert par cette politique?",
+                "help": "Si oui, veuillez compléter le formulaire de marchandises contrôlées trouvé ici",
+                "error": "",
+                "placeholder": ""
+            },
+            "twelveSubTwo": {
+                "text": "Le mouvement des diamants est-il couvert par cette politique?",
+                "help": "Si oui, le client vous a-t-il fourni son certificat Kimberly?",
+                "error": "",
+                "placeholder": ""
+            },
+            "twelveSubThree": {
+                "text": "Les industries ou équipements pétroliers, pétroliers, gaziers ou pétrochimiques de ces industries sont-ils couverts par cette politique?",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qThirteen": {
+            "text": "Utilisez cette case pour fournir toute information utile pouvant aider l'équipe des sanctions à évaluer votre requête.",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des informations"
+        },
+        "grid": {
+            "name": "prénom",
+            "nationality": "Nationalité / Lieu de constitution"
+        }
+    },
+    "ConsultancyServices": {
+        "title": "Formulaire de sanctions pour services de conseil",
+        "qOne": {
+            "text": "Veuillez décrire les services de conseil fournis",
+            "help": "",
+            "error": "Détails consultatifs / consultatifs requis",
+            "placeholder": "Services fournis"
+        },
+        "qTwo": {
+            "text": "À quelle date débuteront les services de conseil?",
+            "help": "",
+            "error": "Date de début requise",
+            "placeholder": "Choisissez la date de début"
+        },
+        "qThree": {
+            "text": "Quels sont les noms des parties auxquelles les services sont fournis? (y compris le lieu de constitution ou la nationalité)?",
+            "help": "Si vous êtes au courant de l'existence d'un droit de propriété ou d'un contrôle exercé par une personne ou une entité, y compris un tiers provenant d'un pays sanctionné, veuillez inclure ces informations.",
+            "error": "",
+            "placeholder": "",
+            "threeSubOne": {
+                "text": "Le client:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "threeSubTwo": {
+                "text": "Tout autre tiers impliqué dans la transaction.",
+                "help": "inclure, tout tiers à qui notre produit de travail peut être divulgué, autres conseillers tiers, filiales de tiers et coentreprises",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qFour": {
+            "text": "Quel est le nom du ou des pays sanctionnés dans la liste ci-dessus?",
+            "help": "",
+            "error": "Pays sanctionnés requis",
+            "placeholder": "Pays sanctionnés"
+        },
+        "qFive": {
+            "text": "Des citoyens américains, des entreprises américaines, des collègues américains de WTW ou des entreprises américaines de WTW sont-ils impliqués dans cette transaction?",
+            "help": "",
+            "error": "",
+            "placeholder": ""
+        },
+        "qSix": {
+            "text": "Des décisions ont-elles été prises aux États-Unis (que ce soit sur le sol américain ou dans l'espace aérien américain) concernant cette transaction?",
+            "help": "Cela inclut les décisions prises et les affaires faites pendant votre séjour aux États-Unis, même si vous êtes en vacances. Cuba.",
+            "error": "",
+            "placeholder": ""
+        },
+        "qSeven": {
+            "text": "Quelle (s) monnaie (s) sera (seront) utilisée (s) pour le paiement des services?",
+            "help": "",
+            "error": "Au moins une devise requise",
+            "placeholder": "Primes"
+        },
+        "qEight": {
+            "text": "Les entreprises clientes sont-elles concernées par le commerce des armes ou le mouvement de biens ou de logiciels à usage militaire, contrôlés ou à double usage?",
+            "help": "Si oui, veuillez fournir plus de détails sur le client et indiquer si les services fournis par Willis Towers Watson faciliteront l’échange de ces produits ou logiciels.",
+            "error": "",
+            "placeholder": ""
+        },
+        "qNine": {
+            "text": "Utilisez cette zone pour fournir des informations utiles permettant à l’équipe des sanctions d’évaluer votre requête",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des informations"
+        }
+    },
+    "iranSanction": {
+        "title": "Formulaire de sanctions pour les transactions impliquant l'Iran",
+        "provide": {
+            "details": "Fournir des noms",
+            "decision": "Veuillez expliquer les décisions prises aux États-Unis."
+        },
+        "questionType": {
+            "name": "Remplissez votre nom",
+            "parties": "Les parties impliquées",
+            "usInvolvement": "Participation des États-Unis",
+            "insurance": "Participation des États-Unis",
+            "iranianExposure": "Détails sur l'exposition iranienne"
+        },
+        "qOne": {
+            "text": "Quel est le nom de votre secteur d'activité et de l'emplacement du bureau? ",
+            "help": "CRB (GB) - Transports maritimes ou HCB (GB) - Londres ou IRR (Willis Re) - International APMETA",
+            "error": "",
+            "placeholder": "",
+            "answerGrid": {
+                "bUArea": "Zone commerciale",
+                "loaction": "Emplacement du bureau",
+                "legalEntity": "Entité légale WTW"
+            }
+        },
+        "qTwo": {
+            "text": "Date d'entrée en vigueur de la police et durée de la police ou s'il s'agit d'un service de conseil, date de début du contrat?",
+            "help": "1er janvier pour 12 mois",
+            "error": {
+                "inceptionDate": "Date de création requise",
+                "duration": "Durée requise"
+            },
+            "placeholder": {
+                "inceptionDatePlaceholder": "Date de création",
+                "duarationPlaceholder": "Durée"
+            }
+        },
+        "qThree": {
+            "text": "Quel est le type de (ré) assurance ou de services fournis?",
+            "help": "",
+            "error": "Détails de (re) assurance ou de services requis",
+            "placeholder": "(re) assurance ou services"
+        },
+        "qFour": {
+            "text": "Quel est le but de la (ré) assurance ou des services fournis?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qFive": {
+            "text": "Cette activité implique-t-elle la fourniture de services à ou en Iran? Dans l'affirmative, veuillez préciser quels sont ces services et qui en bénéficie.",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qSix": {
+            "text": "La transaction proposée concerne-t-elle spécifiquement l'Iran? Ou bien la transaction est-elle une transaction mondiale avec seulement un pourcentage de celle-ci impliquant l'Iran?",
+            "help": "S'agit-il d'une police d'assurance globale ou d'une police d'assurance exclusivement iranienne? Ou est-ce que le contrat de services concerne des services internationaux, y compris l'Iran, ou seulement des services iraniens?",
+            "error": "",
+            "placeholder": ""
+        },
+        "qSeven": {
+            "text": "Quel revenu Willis Towers Watson gagnera-t-il avec le risque iranien? Croyez-vous que cela soit exact ou une estimation des revenus générés?",
+            "help": "",
+            "error": "",
+            "placeholder": "fournir des détails"
+        },
+        "qEight": {
+            "text": "Y a-t-il un autre pays sanctionné impliqué?",
+            "help": "",
+            "error": "Pays sanctionnés requis",
+            "placeholder": "Pays sanctionné (s)"
+        },
+        "qNine": {
+            "text": "Quelle monnaie sera utilisée?",
+            "help": "",
+            "error": "Au moins une devise requise",
+            "placeholder": "Primes"
+        },
+        "qTen": {
+            "text": "Quels sont les noms des parties impliquées dans cette transaction? (y compris le lieu de constitution ou la nationalité)?",
+            "help": "Si vous êtes au courant de l'existence d'un droit de propriété ou d'un contrôle exercé par une personne ou une entité, y compris un tiers provenant d'un pays sanctionné, veuillez inclure ces informations.",
+            "error": "",
+            "placeholder": "",
+            "tenSubOne": {
+                "text": "Le client:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "tenSubTwo": {
+                "text": "L'assuré:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "tenSubThree": {
+                "text": "Les réassurés / rétrocédants:",
+                "help": "",
+                "error": "",
+                "placeholder": ""
+            },
+            "tenSubFour": {
+                "text": "Tout autre tiers impliqué dans la transaction:",
+                "help": "comprennent les tiers auxquels le produit de notre travail peut être divulgué, les autres conseillers tiers, les filiales de tiers et les coentreprises.",
+                "error": "",
+                "placeholder": ""
+            }
+        },
+        "qEleven": {
+            "text": "Nom des utilisateurs finaux de produits ou services en Iran",
+            "help": "",
+            "error": "",
+            "placeholder": "fournir des détails"
+        },
+        "qTwelve": {
+            "text": "Des paiements seront-ils acheminés via des banques iraniennes? Si oui, donnez les noms:",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des noms"
+        },
+        "qThirteen": {
+            "text": "Y a-t-il une implication du gouvernement iranien ou de l'Etat?",
+            "help": "Cela inclut les entités qui ont des liens connus ou présumés avec le gouvernement iranien (que ce soit par le biais de la propriété, du contrôle ou de relations commerciales), telles que les compagnies de navigation de la République islamique d’Iran, la Naftiran Intertrade Co., etc. Si oui, donnez des détails.",
+            "error": "",
+            "placeholder": "Fournir des noms"
+        },
+        "qForteen": {
+            "text": "Des citoyens américains, des sociétés ou des collègues de Willis Towers Watson ou des sociétés sont-ils impliqués dans cette transaction?",
+            "help": "Si oui, veuillez fournir des détails supplémentaires.",
+            "error": "",
+            "placeholder": "Fournir des noms"
+        },
+        "qFifteen": {
+            "text": "Des décisions ont-elles été prises aux États-Unis (que ce soit sur le sol américain ou dans l'espace aérien américain) concernant cette transaction?",
+            "help": "Cela inclut les décisions prises et les affaires faites pendant votre séjour aux États-Unis, même si vous êtes en vacances. Cuba.",
+            "error": "",
+            "placeholder": "Veuillez expliquer les décisions prises aux États-Unis."
+        },
+        "qSixteen": {
+            "text": "Des souscripteurs d’assurance, des tiers, des fournisseurs, des agents ou des débiteurs américains sont-ils impliqués dans cette transaction?",
+            "help": "AIG Europe, Federal Express, Bank of America, Deloitte",
+            "error": "",
+            "placeholder": ""
+        },
+        "qSeventeen": {
+            "text": "L'une des parties désignées à la section 10 des sociétés filiales des sociétés mères américaines?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des noms"
+        },
+        "qEighteen": {
+            "text": "Des ressortissants iraniens seront-ils assurés (y compris la responsabilité civile)?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des noms"
+        },
+        "qNineteen": {
+            "text": "Si la couverture ne concerne pas uniquement un risque iranien, pouvez-vous confirmer en pourcentage le montant du risque iranien par rapport à la couverture totale?",
+            "help": "Part du volume des ventes / expéditions en provenance / à destination de l'Iran ou du nombre de ressortissants iraniens couverts, etc., par rapport au volume total des ventes / expéditions pendant la période de la police ou au nombre total de personnes couvertes, etc.",
+            "error": "",
+            "placeholder": "Montant du risque iranien (%)"
+        },
+        "qTwenty": {
+            "text": "S'il s'agit de réassurance, est-ce facultatif ou est-ce un traité?",
+            "help": "",
+            "error": "Type d'assurance requis",
+            "placeholder": "Sélectionner le genre"
+        },
+        "qTwentyOne": {
+            "text": "Si la (ré) assurance couvre une expédition de marchandises, veuillez nommer les destinataires et les affréteurs iraniens:",
+            "help": "",
+            "error": "Destinataire ou Charteres requis",
+            "placeholder": "Sélectionner le genre"
+        },
+        "qTwentyTwo": {
+            "text": "Le client voyagera-t-il en Iran?",
+            "help": "Veuillez vous assurer que les détails ont été inclus dans la section 10 ci-dessus.",
+            "error": "",
+            "placeholder": "",
+            "tewntyTwoSubOne": {
+                "text": "Quel est exactement le but du voyage? Que fera le client en Iran? Le client rencontrera-t-il des personnes ou des entités iraniennes?",
+                "help": "",
+                "error": "",
+                "placeholder": "Fournir des détails"
+            }
+        },
+        "qTwentyThree": {
+            "text": "Cette transaction implique-t-elle la vente, la fourniture, le transfert, l'exportation ou l'importation de biens / produits / services à destination ou en provenance de l'Iran?",
+            "help": "Veuillez préciser ce qu’ils sont et s’ils vont en Iran ou en reviennent.",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentyFour": {
+            "text": "Quelle est l'utilisation finale des produits / biens ou services en Iran?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentyFive": {
+            "text": "Les produits / produits, logiciels, technologies ou services sont-ils d’origine américaine ou contiennent-ils plus de 10% de composants d’origine américaine?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentySix": {
+            "text": "Les marchandises sont-elles des armes de destruction massive ou des produits / marchandises, logiciels, technologies ou services à utiliser pour mettre au point ou fabriquer des armes de destruction massive?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentySeven": {
+            "text": "Les marchandises contrôlées sont-elles des marchandises, des armes, des armes ou du matériel pouvant servir à la répression interne?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentyEight": {
+            "text": "Les produits / biens, logiciels, technologies ou services sont-ils liés à l'enrichissement nucléaire ou aux systèmes d'armes nucléaires, y compris les réacteurs nucléaires?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qTwentyNine": {
+            "text": "Les produits / biens, logiciels, technologies ou services sont-ils des biens à double usage?",
+            "help": "systèmes de télécommunication, systèmes de sécurité de l'information?",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qThirty": {
+            "text": "Les produits / marchandises en graphite, métaux bruts ou semi-finis, y compris le fer, l'acier, le nickel, l'aluminium, le titane et les alliages, sont-ils sous une forme quelconque?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qThirtyOne": {
+            "text": "Les produits / biens sont-ils du pétrole brut, des produits pétroliers ou des produits pétrochimiques ou des équipements pour le développement de ces produits?",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "qThirtyTwo": {
+            "text": "Utilisez cette case pour fournir toute information utile pouvant aider l'équipe des sanctions à évaluer votre requête.",
+            "help": "",
+            "error": "",
+            "placeholder": "Fournir des détails"
+        },
+        "grid": {
+            "name": "prénom",
+            "nationality": "Nationalité / Lieu de constitution"
+        }
+    },
+    "payments": {
+        "title": "Modèle de paiements A & S",
+        "office": {
+            "text": "Veuillez sélectionner BU / Bureaue",
+            "placeholder": "BU / Bureau"
+        },
+        "gridForPayments": {
+            "refNumber": "Numéro de référence",
+            "touchpoint": "Point de contact des sanctions",
+            "monies": "Flux d'argent",
+            "reinsured": "Nom de (ré) assuré",
+            "u/w": "Nom des U / W",
+            "policyType": "Type de politique, par exemple Responsabilité de la coque",
+            "inceptionDate": "Date de prise d'effet de la police",
+            "currency": "Devise, par exemple GBP / USD",
+            "amount": "Montant facturé",
+            "comments": "KYC / CVT Commentaires"
+        }
+    },
+    "footer": {
+        "privacyReminder": "Déni de responsabilité et conditions d'utilisation",
+        "contact": "Contactez nous",
+        "review": "Matériel de formation",
+        "law": "Droit d'auteur © 2018 Willis Towers Watson. Tous les droits sont réservés"
+    }
+    
+}

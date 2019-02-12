@@ -1,0 +1,44 @@
+<!-- <div class="dialog-container"> -->
+  <h2>Edit Business Unit Information</h2>
+    <div class="modal-container example-container">
+            <mat-form-field class="top-margin">
+        <mat-label>Business Unit Name</mat-label>
+        <input matInput [(ngModel)]="data.name" name="BusinessUnitName" required>
+        <button mat-button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        <mat-error *ngIf="!BusinessUnitName">
+          Business Unit Name <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="top-margin">
+        <mat-label>Business Unit Code</mat-label>
+        <input matInput [(ngModel)]="data.code" name="BusinessUnitCode" required>
+        <button mat-button *ngIf="data.code" matSuffix mat-icon-button aria-label="Clear" (click)="data.code=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        <mat-error *ngIf="!BusinessUnitCode">
+          Business Unit Code <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="top-margin">
+        <mat-label>Business Unit Group</mat-label>
+        <input matInput [(ngModel)]="data.group" name="BusinessUnitGroup" required>
+        <button mat-button *ngIf="data.group" matSuffix mat-icon-button aria-label="Clear" (click)="data.group=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        <mat-error *ngIf="!BusinessUnitGroup">
+          Business Unit Group <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+  </div>
+
+  <div class="left-margin top-margin">
+    <button mat-button mat-raised-button color="basic" (click)="onNoClick()">Cancel</button>
+    <button class="btn-margin" mat-button mat-raised-button color="primary" cdkFocusInitial>Save</button>
+     
+  </div>
+
+<!-- </div> -->

@@ -1,0 +1,93 @@
+<div>
+  <h1>User Information</h1>
+  <div class="clearfix"></div>
+
+  <div class="modal-container">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="User Name" aria-label="Assignee" matInput [formControl]="myControl"
+      [matAutocomplete]="auto" name="username" required>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option.name}}
+      </mat-option>
+      <mat-error *ngIf="!displayname">
+        Name <strong>required</strong>
+      </mat-error>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <!-- <input matInput [(ngModel)]="firstName" name="firstName" placeholder="Name" required> -->
+    <input matInput [(ngModel)]="displayname" name="displayname" placeholder="Name" required disabled>
+    <button mat-button *ngIf="displayname" matSuffix mat-icon-button aria-label="Clear" (click)="displayname=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="!displayname">
+      Name <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="sub-input-control example-full-width">
+    <input matInput example-form placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+      [(ngModel)]="email" name="email" disabled>
+    <button mat-button *ngIf="email" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="sub-input-control example-full-width">
+    <mat-select placeholder="Business" [disableRipple]="true" [(ngModel)]="businessArea" name="businessArea" required
+      disabled>
+      <mat-option *ngFor="let item of BusinessArea" [value]="item">{{item}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="!businessArea">
+      Business <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="sub-input-control example-full-width">
+    <mat-select placeholder="Country" [disableRipple]="true" [(ngModel)]="Country" name="Country" required disabled>
+      <mat-option *ngFor="let item of countries" [value]="item" required>{{item}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="!Country">
+      Country <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-form-field class="sub-input-control">
+        <mat-select placeholder="Role" [disableRipple]="true" [(ngModel)]="role" name="role" required>
+          <mat-option *ngFor="let item of Role" [value]="item">{{item}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!role">
+          Role <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-6">
+      <mat-form-field class="input-control">
+        <mat-select placeholder="Status" [disableRipple]="true" [(ngModel)]="status" name="Status" required>
+          <mat-option *ngFor="let status of Status" [value]="status">{{status}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!status">
+          Status <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+  <!-- <div class="clearfix"></div> -->
+  <!-- <div style="background-color: rgb(233, 233, 223)" class="form-button padding-10 text-align-right">
+  <button class="btn-margin" mat-button form-button-right button mat-dialog-close mat-raised-button color="secondary">Cancel</button>
+  <button class="btn-margin" mat-button form-button-right button cdkFocusInitial mat-raised-button color="primary">Save</button>
+</div> -->
+
+  <div class="form-button padding-10 text-align-right">
+    <button class="btn-margin" mat-button form-button-right button mat-dialog-close mat-raised-button color="secondary">Cancel</button>
+    <button class="btn-margin" mat-button form-button-right button cdkFocusInitial mat-raised-button color="primary">Save</button>
+  </div>
+</div>

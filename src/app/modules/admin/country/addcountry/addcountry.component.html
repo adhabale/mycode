@@ -1,0 +1,40 @@
+<div>
+   <form class="example-form">
+      <h1>Country information</h1>
+      <div class="clearfix"></div>
+      <div class="modal-container ">
+      <mat-form-field class="sub-input-control" class="example-full-width">
+         <mat-select placeholder="Country" [disableRipple]="true" [(ngModel)]="country" name="Country">
+            <mat-option *ngFor="let item of countries" [value]="item">{{item}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+         <input matInput [(ngModel)]="countryCode" placeholder="Country Code" name="countryCode" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="sub-input-control example-full-width">
+         <mat-select placeholder="Currency" [disableRipple]="true" [(ngModel)]="currency" name="Currency" disabled>
+            <mat-option *ngFor="let item of currencies" [value]="item" disabled>{{item}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+         <input matInput [(ngModel)]="currencyCode" placeholder="Currency Code" name="currencyCode" disabled>
+      </mat-form-field>
+      <mat-form-field class="sub-input-control example-full-width">
+         <mat-select placeholder="Currency Symbol" [disableRipple]="true" [(ngModel)]="currencySymbol" name="CurrencySymbol"
+            disabled>
+            <mat-option *ngFor="let item of currencySymbols" [value]="item">{{item}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+         <mat-select placeholder="Territory" [disableRipple]="true" [(ngModel)]="territory" name="Territory">
+            <mat-option *ngFor="let item of Territories" [value]="item">{{item}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+   </div>
+      <div class="form-button padding-10 text-align-right">
+         <button class="btn-margin" mat-button form-button-right button mat-dialog-close mat-raised-button color="secondary">Cancel</button>&nbsp;
+         <button class="btn-margin" mat-button form-button-right button cdkFocusInitial mat-raised-button color="primary">Save</button>
+      </div>
+   </form>
+</div>

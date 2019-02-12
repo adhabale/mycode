@@ -1,0 +1,53 @@
+<div class="top_nav">
+  <div class="nav_menu">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <a id="menu_toggle">
+          <mat-icon>reorder_rounded</mat-icon>
+        </a>
+        <span class="flex-spacer"></span>
+        <span [matMenuTriggerFor]="notification" class="mat-button-wrapper">
+          <mat-icon matBadge="4" matBadgeColor="warn" data-toggle="tooltip" title="Approval Pending"> notifications
+          </mat-icon>
+        </span>
+        <span class="mat-button-wrapper">
+          <mat-icon matBadge="5" matBadgeColor="warn" data-toggle="tooltip" title="Open Queries" (click)='respondQuery()'>
+            message
+          </mat-icon>
+        </span>
+        <mat-menu #notification="matMenu">
+          <button mat-menu-item style="height:40px">
+            <span> <a class='anchor' (click)='filter("Standard Sanction")'>Standard sanction:2</a></span>
+          </button>
+          <button mat-menu-item style="height:40px">
+            <span> <a class='anchor' (click)='filter("Iran Sanction")'>Iran sanction:1</a></span>
+          </button>
+          <button mat-menu-item style="height:40px">
+            <span> <a class='anchor' (click)='filter("Control Goods")'>Control goods:1</a></span>
+          </button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="menu" class="mat-button">
+          <span class="mat-button-wrapper"> {{language}}
+            <mat-icon role="img" aria-hidden="true">arrow_drop_down</mat-icon>
+          </span>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="useLanguage('en','English')">English</button>
+          <button mat-menu-item (click)="useLanguage('fr','French')">French</button>
+          <button mat-menu-item (click)="useLanguage('zh-Hans','Chinese')">Chinese</button>
+          <button mat-menu-item (click)="useLanguage('sp','Spanish')">Spanish</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="usermenu" class="mat-button">
+          <span class="mat-button-wrapper"> {{currentUser}}
+            <mat-icon role="img" aria-hidden="true">arrow_drop_down</mat-icon>
+          </span>
+        </button>
+        <mat-menu #usermenu="matMenu">
+          <button mat-menu-item (click)="selectUser('Business User')">Business User</button>
+          <button mat-menu-item (click)="selectUser('Sanction User')">Sanction User</button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+</div>

@@ -1,0 +1,909 @@
+
+
+<!--88888888888888888888888888888888888888888888888888888888888888-->
+
+
+<div class="clearfix"></div>
+<div class="row" >
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <p style="font-size: 14px;font-weight: bold; color: crimson">Please complete this form in English language. </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <!-- <div class="x_content"> -->
+      <fieldset [disabled]="checkUser(standardSanctionForm)">
+        <form id="standardSanctionForm" [formGroup]="insuranceReinsuranceGroup">
+          <div formArrayName="insuranceReinsurance">
+          <div class="question-group" >
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 1/13</span>{{'standardsSanction.qOne.text'|translate}}
+                  <a tabindex="0" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}"
+                    matTooltip="{{'standardsSanction.qOne.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text" (click)="showInfo()">info_outlined</mat-icon>
+                  </a>
+
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <table class="table">
+                        <tbody>
+                          <tr style="color:#702082;">
+                            <th style="width: 5%"></th>
+                            <th>Business Area</th>
+                            <th>Office location</th>
+                            <th>WTW Legal Entity</th>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <!-- <mat-icon>remove</mat-icon> -->
+                            </td>
+                            <td>
+                              Marine – GB</td>
+                            <td>London</td>
+                            <td>Willis Towers Watson Consulting </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <table class="table">
+                    <tbody>
+                      <tr style="color:#702082;">
+                        <th style="width: 5%"></th>
+                        <th>{{'standardsSanction.qOne.answerGrid.bUArea'|translate}}</th>
+                        <th>{{'standardsSanction.qOne.answerGrid.loaction'|translate}}</th>
+                        <th>{{'standardsSanction.qOne.answerGrid.legalEntity'|translate}}</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-icon>remove</mat-icon>
+                        </td>
+                        <td>
+                          Marine – GB</td>
+                        <td>London</td>
+                        <td>Willis Towers Watson Consulting </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <mat-icon color="primary">add_box</mat-icon>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 2/13</span>{{'standardsSanction.qTwo.text'|translate}}<a tabindex="1" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qTwo.help'|translate}}"
+                    matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <!-- <div class="col-sm-12 col-md-6 col-lg-6"> -->
+                      <p>
+                        Previous Date.
+                        <br />
+                        Previous Duration.
+                      </p>
+                      <!-- </div> -->
+                      <!-- <div class="col-sm-12 col-md-6 col-lg-6">
+                            <p>
+                              Previous text(Duration).
+                            </p>
+                          </div> -->
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='1'>
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <mat-form-field class="sub-input-control" formGroupName='answer'>
+                      <input matInput [matDatepicker]="picker1" placeholder="{{'standardsSanction.qTwo.placeholder.inceptionDatePlaceholder'|translate}}"
+                        name="inceptionDate"  [required]="!quote" formControlName='date'>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                      <mat-error *ngIf="!inceptionDate">
+                        Inception date <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <mat-form-field class="sub-input-control"  formGroupName='answer'>
+                      <mat-select placeholder="{{'standardsSanction.qTwo.placeholder.duarationPlaceholder'|translate}}"
+                        [disableRipple]="true" name="duration" [required]="!quote" formControlName='duration'>
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let duration of durations" [value]="duration">{{duration}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="!duration">
+                        "{{'standardsSanction.qTwo.error.duration'|translate}}"
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 3/13</span>{{'standardsSanction.qThree.text'|translate}}
+                  (including place of incorporation or nationality)?<a tabindex="2" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'standardsSanction.qThree.help'|translate}}">
+
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="question-subpart">
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.1/13</span>{{'standardsSanction.qThree.threeSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>{{'standardsSanction.grid.name'|translate}}</th>
+                                    <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>ABC Airline</td>
+                                    <td>UK</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>STR Airline</td>
+                                    <td>Russia</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart" formGroupName='2'>
+                        <app-custom-table [columns]='2'  (sendData)='getData($event)'formArrayName='answer'
+                          >
+
+                        </app-custom-table>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.2/13</span>{{'standardsSanction.qThree.threeSubTwo.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>{{'standardsSanction.grid.name'|translate}}</th>
+                                    <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>XYZ Company</td>
+                                    <td>UK</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                         <!-- <app-custom-table [columns]='2'  ></app-custom-table> -->
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.3/13</span>{{'standardsSanction.qThree.threeSubThree.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>{{'standardsSanction.grid.name'|translate}}</th>
+                                    <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                            <!-- <app-custom-table [columns]='2' ></app-custom-table> -->
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group" style="border:none">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.4/13</span>{{'standardsSanction.qThree.threeSubFour.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>{{'standardsSanction.grid.name'|translate}}</th>
+                                    <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                           <!-- <app-custom-table [columns]='2'   (sendData)='getData($event)' ></app-custom-table> -->
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 4/13</span>{{'standardsSanction.qFour.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='3'>
+                  <mat-form-field class="input-control" formGroupName='answer' >
+                    <mat-select placeholder="{{'standardsSanction.qFour.placeholder'|translate}}" [disableRipple]="true"
+                     formControlName="sanctionedCountry"  required multiple [disabled]='formData.sanctionedCountry.length!=0'>
+                      <mat-option *ngFor="let country of sanctionedCountries,let i=index" [value]="country">{{country.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!sanctionedCountry">
+                      {{'standardsSanction.qFour.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 5/13</span>{{'standardsSanction.qFive.text'|translate}}<a tabindex="3" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qFive.help'|translate}}"
+                    matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='4'>
+                  <mat-form-field class="input-control">
+                    <mat-select placeholder="{{'standardsSanction.qFive.placeholder'|translate}}" name="insuranceTypes"
+                    formControlName="answer" required multiple>
+                      <mat-option *ngFor="let type of insuranceType" [value]="type">{{type.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!insuranceTypes">
+                      {{'standardsSanction.qFive.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 6/13</span>{{'standardsSanction.qSix.text'|translate}}<a tabindex="4" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qSix.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='5'>
+                  <mat-form-field class="input-control">
+                    <input matInput type="text" placeholder="{{'standardsSanction.qSix.help'|translate}}"
+                     formControlName="answer"  name="activity" required>
+                    <button mat-button *ngIf="activityValue" matSuffix mat-icon-button aria-label="Clear" (click)="activityValue=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!activityValue">
+                      {{'standardsSanction.qSix.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 7/13</span>{{'standardsSanction.qSeven.help'|translate}}
+                  <a tabindex="5" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}"
+                    matTooltip="{{'standardsSanction.qSeven.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='6'>
+                  <mat-radio-group 
+                  name="policyCover" value="policyCover"  formControlName="answer" >
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="Global Placement" color="primary">Global placement</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="Single Risk" color="primary">A Single risk
+                        policy involving only the sanctioned country mentioned above</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 8/13</span>{{'standardsSanction.qEight.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div formGroupName='7'>
+                <div class="question-subpart"  formGroupName='answer'>
+                  <mat-radio-group name="usInvolved" value="usInvolved" formControlName='boolean'>
+                    <div class="col-sm-12 col-md-6 col-lg-6" >
+                      <mat-radio-button value="Yes" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="No" color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="qEightAnswer()">
+                  <div class="amendment" *ngIf="amendment">
+                    <mat-card class="height-70px">
+                      <mat-card-header>
+                        <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          Previous Text.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+
+                  <mat-form-field class="example-full-width"  formGroupName='answer'>
+                    <mat-label>Please explain the US involvement.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5" formControlName='textarea'></textarea>
+                  </mat-form-field>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 9/13</span>{{'standardsSanction.qNine.text'|translate}}
+                  <a tabindex="6" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}"
+                    matTooltip="{{'standardsSanction.qNine.help'|translate}}">
+                    <!-- <mat-icon class="help-text">info_outlined</mat-icon> -->
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div formGroupName='8'>
+                <div class="question-subpart"  formGroupName='answer'>
+                  <mat-radio-group name="usDecisions" formControlName='boolean'>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="Yes" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="No" color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="qNineAnswer()">
+                  <div class="amendment" *ngIf="amendment">
+                    <mat-card>
+                      <mat-card-header>
+                        <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          Previous Text.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  <mat-form-field class="example-full-width" formGroupName='answer'>
+                    <mat-label>Please explain decisions made in US.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"  formControlName='textarea'></textarea>
+                  </mat-form-field>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 10/13</span>{{'standardsSanction.qTen.help'|translate}}<a tabindex="7" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'standardsSanction.qTen.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div formGroupName='9'>
+                <div class="question-subpart" formGroupName='answer' >
+                  <mat-radio-group value="2" name="usUnderwriters" formControlName='boolean'>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="Yes" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="No" color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="qTenAnswer()">
+
+                  <div class="amendment" *ngIf="amendment">
+                    <mat-card>
+                      <mat-card-header>
+                        <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          Previous Text.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  <mat-form-field class="example-full-width" formGroupName='answer'>
+                    <mat-label>Please explain use of U.S underwriters.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5" formControlName='textarea'></textarea>
+                  </mat-form-field>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 11/13</span>{{'standardsSanction.qEleven.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <!-- <div class="col-sm-12 col-md-6 col-lg-6"> -->
+                      <p>
+                        Previous Premium.
+                        <br />
+                        Previous Claims.
+                      </p>
+                      <!-- </div> -->
+                      <!-- <div class="col-sm-12 col-md-6 col-lg-6"> -->
+                      <!-- <p>
+                              Previous Text(Claims)
+                            </p> -->
+                      <!-- </div> -->
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='10'>
+                  <div class="col-sm-12 col-md-6 col-lg-6" formGroupName='answer'>
+                    <mat-form-field class="sub-input-control" >
+                      <mat-select placeholder="{{'standardsSanction.qEleven.placeholder.placeholderPremium'|translate}}"
+                       name="premiumValue" formControlName='premiums' required multiple>
+                        <mat-option *ngFor="let premium of premiums" [value]="premium">{{premium}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="!premiumValue">
+                        "{{'standardsSanction.qEleven.error.errorPremium'|translate}}"
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-6"  formGroupName='answer'>
+                    <mat-form-field class="sub-input-control">
+                      <mat-select placeholder="{{'standardsSanction.qEleven.placeholder.placeholderClaim'|translate}}"
+                      name="claimValue"  formControlName='claims' required multiple>
+                        <mat-option *ngFor="let claim of claims" [value]="claim">{{claim}}</mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="!claimValue">
+                        "{{'standardsSanction.qEleven.error.errorClaim'|translate}}"
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 12/13</span>{{'standardsSanction.qTwelve.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12" formGroupName='11'>
+                <div class="question-subpart" formGroupName='answer'>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 12.1/13</span>{{'standardsSanction.qTwelve.twelveSubOne.text'|translate}}<a tabindex="8"
+                            class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.notr'|translate}}"
+                            matTooltip="{{'standardsSanction.qTwelve.twelveSubOne.help'|translate}}">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card class="height-70px">
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous Text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+
+                        </div>
+                        <div class="question-subpart" formGroupName='isControlGoods'>
+                          <mat-radio-group  name="controlledGoodsInvolvement" formControlName='answer' >
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                              <mat-radio-button [value]="Yes" color="primary" >Yes</mat-radio-button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                              <mat-radio-button [value]="No" color="primary" >No</mat-radio-button>
+                            </div>
+                           cdd {{formData.controlledGoodsInvolvement}}
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 12.2/13</span>{{'standardsSanction.qTwelve.twelveSubTwo.text'|translate}}<a tabindex="9"
+                            class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}"
+                            matTooltip="{{'standardsSanction.qTwelve.twelveSubTwo.help'|translate}}">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card class="height-70px">
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous Text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart" formGroupName='isDiamond'>
+                          <mat-radio-group name="diamonds" formControlName='answer' >
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                              <mat-radio-button value="Yes" color="primary">Yes</mat-radio-button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                              <mat-radio-button value="No" color="primary">No</mat-radio-button>
+                            </div>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group" style="border:none;">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 12.3/13</span>{{'standardsSanction.qTwelve.twelveSubThree.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous Text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart" formGroupName='isPetrolium'>
+                          <mat-radio-group name="equipments" formControlName='answer'>
+                            <div class="col-sm-12 col-md-6 col-lg-6" >
+                              <mat-radio-button value="Yes" color="primary">Yes</mat-radio-button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                              <mat-radio-button value="No" color="primary">No</mat-radio-button>
+                            </div>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 13/13</span>{{'standardsSanction.qThirteen.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName='12'>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>{{'standardsSanction.qThirteen.placeholder'|translate}}</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5" formControlName='answer'></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;" *ngIf="controlledGoodsInvolvement!='1'">
+            <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">{{'buttons.uploadDoc'|translate}}</button>
+            <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+            {{fileName}}
+          </div>
+          <div *ngIf='hideBUBtn && !isSubmitted()' style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">{{'buttons.backToList'|translate}}</button>
+          </div>
+          <!-- <div class="form-button" *ngIf='!isSubmitted() && !hideBUBtn'>
+            <button type="button" *ngIf="amendment" class="btn btn-secondary" (click)="backToParent()" style="float: left">{{'buttons.backToList'|translate}}</button>
+            <button type="button" class="btn btn-secondary">{{'buttons.reset'|translate}}</button>
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">{{'buttons.cancel'|translate}}</button>
+            <button *ngIf="controlledGoodsInvolvement!='1'" type="button" mat-raised-button color="primary" [disabled]='!standardSanctionForm.valid'
+              (click)='onSubmit()'>{{'buttons.submit'|translate}}</button>
+            <a routerLink="/controlled-goods">
+              <button *ngIf="controlledGoodsInvolvement=='1'" type="button" mat-raised-button color="primary">{{'buttons.nextPage'|translate}}</button>
+            </a>
+          </div> -->
+          <!--for sanction user-->
+          <!-- <div class="form-button" *ngIf='isSubmitted()'> -->
+          <!-- <button *ngIf="controlledGoodsInvolvement!='1'" type="button" mat-raised-button color="primary" (click)='onApprove()'>{{'buttons.reset'|translate}}</button> -->
+          <!-- <button *ngIf="controlledGoodsInvolvement!='1'" type="button" class="btn btn-secondary" (click)='onDecline()'>{{'buttons.cancel'|translate}}</button> -->
+          <!-- <button (click)="stepper.reset()" class="btn btn-secondary">{{'buttons.reset'|translate}}</button>
+            <button mat-raised-button color="primary" matStepperNext>{{'buttons.submit'|translate}}</button>
+            <button *ngIf="controlledGoodsInvolvement!='1'" type="button" class="btn btn-secondary" (click)='onCancel()'>{{'buttons.backToList'|translate}}</button>
+          </div> -->
+
+          </div>
+        </form>
+        <button (click)='bind()'>submit</button>
+            <p>
+            Form Value: {{ insuranceReinsuranceGroup.value | json }}
+          </p>
+
+      </fieldset>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.nav-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+}
+.flex-spacer{
+    flex-grow: 1;
+}
+button:focus{
+    outline: none !important;
+}
+.mat-button .mat-button-wrapper{
+    vertical-align: middle;
+}
+.anchor{
+    cursor: pointer!important;
+    /* color: #5FB8F2 !important ; */
+}
+::ng-deep .mat-menu-panel{
+    /* background: #EDEDED; */
+    background: #e9e8db;
+}
+button.mat-menu-item{
+    color:black;
+}
+::ng-deep .mat-menu-item:hover:not([disabled]) {
+    background: #702082;
+    color: white;
+}
+.mat-menu-item{
+    line-height: 20px;
+    height: 40px;
+    border-bottom: 1px solid silver;
+    margin-bottom: 0px;
+}
+::ng-deep .mat-menu-content:not(:empty){
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+mat-toolbar{
+    background: #b7b6a9;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+}
+.mat-button{
+    padding:0;
+}
+.mat-button-wrapper{
+    margin-right: 16px;
+}

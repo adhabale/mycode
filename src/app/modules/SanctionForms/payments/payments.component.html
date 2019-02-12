@@ -1,0 +1,169 @@
+<!-- <div class="page-title">
+  <div class="col-md-12 title_left">
+    <h1 translate>payments.title</h1>
+  </div>
+</div> -->
+<div class="clearfix"></div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <!-- <div class="x_content"> -->
+      <mat-form-field class="input-control">
+        <mat-select placeholder="{{'payments.office.placeholder'|translate}}" [disableRipple]="true" [(ngModel)]="buo"
+          name="buo">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let buo of buoffice" [value]="buo">{{buo}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!buo">
+          BU office <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <p>The ‘KYC/CVT Comments’ section is only relevant for Russian/Ukrainian referrals. There is no need to attach
+        any KYC/CVT checks or correspondence to your covering email if the ‘KYC/CVT Comments’ section has been
+        completed. </p>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <!-- <div class="x_content"> -->
+      <div class="payments-table">
+        <table class="table">
+          <tbody>
+            <tr style="color:#702082;">
+              <!-- <th></th> -->
+              <th style="width:7%">{{'payments.gridForPayments.refNumber'|translate}} </th>
+              <th style="width:7%">{{'payments.gridForPayments.touchpoint'|translate}}</th>
+              <th style="width:10%">{{'payments.gridForPayments.monies'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.reinsured'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.u/w'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.policyType'|translate}} </th>
+              <th style="width:7%">{{'payments.gridForPayments.inceptionDate'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.currency'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.amount'|translate}}</th>
+              <th style="width:7%">{{'payments.gridForPayments.comments'|translate}}</th>
+              <!-- <th colspan="4">Actions</th> -->
+
+
+            </tr>
+
+            <tr>
+              <!-- <td><a><mat-icon>add</mat-icon></a></td> -->
+              <td>0112255PRM </td>
+              <td>Russia </td>
+              <td>Money has been received from the client (123 Entity) and is now being passed onto U/Ws</td>
+              <td>Insured: XYZ Airline Reinsured:ABC Entity</td>
+              <td>RTFH Co.,ABC Ltd,5ive Inc.</td>
+              <td>Full Liability </td>
+              <td>01-01-2018</td>
+              <td>RUB</td>
+              <td>RUB 123,000</td>
+              <td>Clear</td>
+            </tr>
+
+            <tr>
+              <!-- <td><a><mat-icon>add</mat-icon></a></td> -->
+              <td>0112255CLM </td>
+              <td>US </td>
+              <td>Money has been received from the client</td>
+              <td>Insured: XYZ Airline Reinsured:ABC Entity</td>
+              <td>RTFH Co.,ABC Ltd,5ive Inc.</td>
+              <td>Full Liability </td>
+              <td>24-01-2019</td>
+              <td>USD</td>
+              <td>USD 123,000</td>
+              <td>Clear</td>
+            </tr>
+
+            <tr>
+              <!-- <td><a><mat-icon>add</mat-icon></a></td> -->
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.refNumber'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="sub-input-control cust-90">
+                  <mat-select placeholder="{{'payments.gridForPayments.touchpoint'|translate}}" [disableRipple]="true"
+                    [(ngModel)]="c" name="country">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let c of country" [value]="c">{{c}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.monies'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+
+              </td>
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.reinsured'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.u/w'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.policyType'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="cust-90">
+                  <input class="date-picker" matInput [matDatepicker]="claimDatePicker" placeholder="{{'payments.gridForPayments.inceptionDate'|translate}}"
+                    [(ngModel)]="claimDate" required>
+                  <mat-datepicker-toggle matSuffix [for]="claimDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #claimDatePicker></mat-datepicker>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="sub-input-control cust-90">
+                  <mat-select placeholder="{{'payments.gridForPayments.currency'|translate}}" [disableRipple]="true"
+                    [(ngModel)]="cur" name="currency">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let cur of currency" [value]="cur">{{cur}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.amount'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width cust-80">
+                  <mat-label>{{'payments.gridForPayments.comments'|translate}}</mat-label>
+                  <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="5"></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+
+</div>

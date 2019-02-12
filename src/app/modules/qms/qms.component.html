@@ -1,0 +1,199 @@
+<div class="page-title">
+    <div class="title_left">
+        <h1>Query Communication History For : <mat-label>12345</mat-label>
+        </h1>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 custom-margin">
+        <mat-accordion class="content-headers-align">
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="new-query-mat-Collapsed">
+                        New Query
+                    </mat-panel-title>
+                    <mat-panel-description style="text-align:center">
+                        Create a new query for Business or Sanction team member
+                    </mat-panel-description>
+                    <mat-icon style="color:#702082;">add_box</mat-icon>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-10">
+                            <mat-form-field class="sub-input-control example-full-width">
+                                <mat-select placeholder="Query Type" [disableRipple]="true" [(ngModel)]="queryType"
+                                    name="queryType">
+                                    <mat-option>None</mat-option>
+                                    <mat-option *ngFor="let queryTypeId of queryTypes" [value]="queryTypeId">{{queryTypeId}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-10">
+                            <mat-form-field class="field-margin example-full-width">
+                                <mat-label>Description</mat-label>
+                                <input matInput required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-10">
+
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Assigned To" aria-label="State" [matAutocomplete]="auto"
+                                    [formControl]="stateCtrl">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                                        <span>{{state.name}}</span>
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </mat-form-field>
+                            <!-- <div class="col-lg-3 attach-icon" IsFileUpload>
+                                            <label for="myfile">
+                                                <mat-icon color="primary">attachment
+                                                    <input class="attach-icon" id="myfile" type="file" style="visibility:hidden"
+                                                        (change)="fileUpload($event)" accept="application/pdf" multiple
+                                                        [disabled]="isAttachFull" />
+                                                </mat-icon>
+                                            </label>
+                                        </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-10">
+                            <div class="col-lg-3 sub-input-control example-full-width field-set">
+                                <mat-checkbox color="primary" [(ngModel)]="isInternal">Internal</mat-checkbox>
+                            </div>&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <div class="attach-icon" IsFileUpload>
+                        <label for="myfile">
+                            <mat-icon class="icon-size" style="color:#702082" (click)="uploadFile()">attachment
+                                <input class="attach-icon" id="myfile" accept="application/pdf" multiple [disabled]="isAttachFull"
+                                    style="visibility:hidden" />
+                            </mat-icon>
+                        </label>
+                    </div>
+                    <!-- <button type="button" mat-raised-button color="basic">Reset</button>             -->
+                    <button type="button" mat-raised-button style="background-color:#702082;color: #fff">Submit</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <mat-card style="margin-bottom:20px;">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="workqueue-table">
+                        <table class="table">
+                            <tbody>
+                                <tr style="color:#702082;">
+                                    <th style="width:15%">Query Type</th>
+                                    <th style="width:20%">Description</th>
+                                    <th style="width:20%">Response</th>
+                                    <th style="width:15%">Assigned To</th>
+                                    <th style="width:15%">Raised By</th>
+                                    <th style="width:7%">Status</th>
+                                    <th style="width:7%">Internal</th>
+                                    <th style="width:7%">Reply</th>
+                                </tr>
+                                <tr>
+                                    <td>Document Missing</td>
+                                    <td>Need a Licence document</td>
+                                    <td>Licence document is attched</td>
+                                    <td>Rahul Jadhav</td>
+                                    <td>Avinash Yadav</td>
+                                    <td>
+                                        <mat-chip color="accent"><span class="text-size">Open</span></mat-chip>
+                                    </td>
+                                    <td>
+                                        <mat-checkbox class="box-color" [(ngModel)]="checked1" color="primary"></mat-checkbox>
+                                    </td>
+                                    <td><a class="anchor" (click)='navigateTo()'>
+                                            <mat-icon data-toggle="tooltip" title="Reply" color="primary">reply</mat-icon>
+                                        </a></td>
+                                </tr>
+                                <tr>
+                                    <td>Information Required</td>
+                                    <td>Provide Client Name </td>
+                                    <td>John doe</td>
+                                    <td>Rahul Jadhav</td>
+                                    <td>Avinash Yadav</td>
+                                    <td>
+                                        <mat-chip color="primary">Closed</mat-chip>
+                                    </td>
+                                    <td>
+                                        <mat-checkbox class="box-color" [(ngModel)]="checked2" color="primary"></mat-checkbox>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Information Required</td>
+                                    <td>Provide Client Name </td>
+                                    <td>John doe</td>
+                                    <td>Rahul Jadhav</td>
+                                    <td>Avinash Yadav</td>
+                                    <td>
+                                        <mat-chip color="primary">Closed</mat-chip>
+                                    </td>
+                                    <td>
+                                        <mat-checkbox class="box-color" [(ngModel)]="checked" color="primary"></mat-checkbox>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Other</td>
+                                    <td>Provide Policy Name</td>
+                                    <td>John doe</td>
+                                    <td>Rahul Jadhav</td>
+                                    <td>Avinash Yadav</td>
+                                    <td>
+                                        <mat-chip color="accent"><span class="text-size">Open</span></mat-chip>
+                                    </td>
+                                    <td>
+                                        <mat-checkbox [(ngModel)]="checked3" color="primary"></mat-checkbox>
+                                    </td>
+                                    <td><a class="anchor" (click)='navigateTo()'>
+                                            <mat-icon data-toggle="tooltip" title="Comment" color="primary">reply</mat-icon>
+                                        </a></td>
+                                </tr>
+                                <tr>
+                                    <td>Information Required</td>
+                                    <td>Provide Policy Name</td>
+                                    <td></td>
+                                    <td>Rahul Jadhav</td>
+                                    <td>Avinash Yadav</td>
+                                    <td>
+                                        <mat-chip color="accent"><span class="text-size">Open</span></mat-chip>
+                                    </td>
+                                    <td>
+                                        <mat-checkbox [(ngModel)]="checked4" color="primary"></mat-checkbox>
+                                    </td>
+                                    <td><a class="anchor" (click)='navigateTo()'>
+                                            <mat-icon data-toggle="tooltip" title="Comment" color="primary">reply</mat-icon>
+                                        </a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                            (page)="pageEvent = $event">
+                        </mat-paginator>
+                    </div>
+
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="clearfix"></div>

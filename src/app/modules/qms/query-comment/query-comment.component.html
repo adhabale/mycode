@@ -1,0 +1,133 @@
+<div id="qms" class="col-sm-12 col-md-12 col-lg-12">
+    <div class="col-sm-12 col-md-8 col-lg-9">
+      <div class="right-border">
+        <h4 class="heading">Comment History</h4>
+        <!-- <div class="mesgs"> -->
+    
+        <div class="msg-history">
+          <div class="incoming-msg">
+            <div class="received-msg">
+              <div class="received-withd-msg">
+                <div><span class="comment-heading">Rahul Jadhav</span><span class="time-date">11:01 AM | June 9</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                  elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+              </div>
+            </div>
+          </div>
+          <div class="outgoing-msg">
+            <div class="sent-msg">
+              <div>
+                  <div><span class="comment-heading">Avinash Yadav</span><span class="time-date">11:01 AM | June 9</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                  elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+    
+              </div>
+          
+            </div>
+          </div>
+          <div class="incoming-msg">
+            <div class="received-msg">
+              <div class="received-withd-msg">
+                  <div><span class="comment-heading">Rahul Jadhav</span><span class="time-date">11:01 AM | June 9</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                  elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+              </div>
+            </div>
+          </div>
+          <div class="outgoing-msg">
+                <div class="sent-msg">
+                  <div>
+                      <div><span class="comment-heading">Avinash Yadav</span><span class="time-date">11:01 AM | June 9</span></div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                      elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                      </div>            
+                </div>
+            </div>
+             <div class="incoming-msg">
+                <div class="received-msg">
+                  <div class="received-withd-msg">
+                    <span class="comment-heading">Rahul Jadhav</span><span class="time-date"> 11:01 AM | Yesterday</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                      elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                    
+                  </div>
+                </div>
+              </div>
+               <div class="outgoing-msg">
+                  <div class="sent-msg">
+                    <div>
+                        <div><span class="comment-heading">Avinash Yadav</span><span class="time-date">11:01 AM | June 9</span></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                        elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                        </div>            
+                  </div>
+              </div>
+              <div class="incoming-msg">
+                  <div class="received-msg">
+                    <div class="received-withd-msg">
+                      <span class="comment-heading">Rahul Jadhav</span><span class="time-date"> 11:01 AM | Yesterday</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+                        elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                      
+                    </div>
+                  </div>
+                </div> 
+    
+        
+        
+      </div>
+      <div class="type-msg">
+          <div class="input-msg-write">
+            <input type="text" class="write_msg" placeholder="Type a message" />
+            <!-- <mat-icon class="icon-size">attachment
+                  <i class="fa fa-paperclip" matTooltip="Manage Attachments" style="font-size:28px; color: #702082" aria-hidden="true"></i>      
+              </mat-icon> -->
+            <div class="attach-icon" IsFileUpload>
+              <label for="myfile">
+                <mat-icon class="icon-size" matTooltip="Manage Attachments" (click)="uploadFile()">attachment
+                  <input class="attach-icon" id="myfile" type="file" (change)="fileUpload($event)" accept="application/pdf"
+                    multiple disabled style="visibility:hidden" />
+                </mat-icon>
+              </label>
+            </div>
+            <button class="msg-send-btn" type="button"><i class="material-icons" matTooltip="Post a message">send</i></button>
+          </div>
+        </div>
+        </div>
+      </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="box-border">
+        <button type="button" class="query-info" mat-raised-button>Query Info</button>
+        <!-- <mat-label class="query-info">Query Info</mat-label> -->
+        <div>
+          <ul class="query-info-list">
+            <li>
+              <mat-label><span class="label-font">Request ID: </span> 12345</mat-label>
+            </li>
+            <li>
+              <mat-label><span class="label-font">Query Type: </span> Document Missing</mat-label>
+            </li>
+            <li>
+              <mat-label><span class="label-font">Description: </span> Need Licence Document</mat-label>
+            </li>
+            <li>
+              <mat-label><span class="label-font">Raised By: </span> Avinash Yadav</mat-label>
+            </li>
+            <li>
+              <mat-label><span class="label-font">Status: </span> Open</mat-label>
+            </li>
+          </ul>
+        </div>
+        <div style="height:100px">
+            <button type="button" class="query-info" mat-raised-button>Action</button>
+            
+            <br><br>
+            <button type="button" mat-raised-button class="btn-close">Close Query</button>
+        </div>
+      </div>
+    
+      <!-- <h5 class="heading">People Involved</h5>
+        <div class="row">
+        </div> -->
+    </div>
+    </div>

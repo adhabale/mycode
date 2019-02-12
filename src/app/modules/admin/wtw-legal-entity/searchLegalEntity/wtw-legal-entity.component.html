@@ -1,0 +1,101 @@
+<div class="page-title">
+  <div class="col-md-12 title_left">
+    <h1>WTW Legal Entity</h1>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 custom-margin">
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Search Criteria
+          </mat-panel-title>
+          <mat-panel-description>
+            Filter the WTW Legal Entity
+            <mat-icon style="color:#702082;">search</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-4">
+            <div class="col-sm-12 col-md-12 col-lg-10">
+              <mat-form-field class="sub-input-control">
+                <mat-select placeholder="Legal Entity Name" [disableRipple]="true" [(ngModel)]="entityname" name="entityname">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let entityname of entityName" [value]="entityname">{{entityname}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-4">
+            <div class="col-sm-12 col-md-12 col-lg-10">
+              <mat-form-field class="sub-input-control">
+                <mat-select placeholder="Description" [disableRipple]="true" [(ngModel)]="description" name="description" >
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let description of descriptions" [value]="description">{{description}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class="col-sm-12 col-md-3 col-lg-4">
+            <div class="col-sm-12 col-md-12 col-lg-10">
+
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-4">
+            <div class="col-sm-12 col-md-12 col-lg-10">
+
+            </div>
+          </div> -->
+          <div class="col-sm-12">
+            <!-- <div class="col-sm-12 col-md-12 col-lg-10 left-margin"> -->
+              <div class="form-button"  style="text-align:right">
+
+                <button type="button" mat-raised-button color="basic">Reset</button>
+                <button type="button" mat-raised-button color="primary">Search</button>
+                <button type="button" mat-raised-button color="primary" (click)="openDialog()">Add New</button>
+              </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </div>
+
+
+</div>
+<div class="clearfix"></div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="workqueue-table">
+              <table class="table table-responsive" matSort (matSortChange)="sortData($event)">
+                <tbody>
+                  <tr style="color:#702082;">
+                    <th style="widows: 25%" mat-sort-header="WTWLegalEntityName">WTW Legal Entity Name</th>
+                    <th style="width:30%" mat-sort-header="Description">Description</th>
+                  </tr>
+                  <tr *ngFor='let item of tempdata'>
+                    <td><a class="anchor" (click)='openDialog(item)'>{{item.entityName}}</a></td>
+                    <td>{{item.descriptions}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

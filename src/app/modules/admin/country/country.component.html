@@ -1,0 +1,115 @@
+<div class="page-title">
+    <div class="col-md-12 title_left">
+        <h1>Country information</h1>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+    <!--search panel-->
+
+    <div class="col-sm-12 col-md-12 col-lg-12 custom-margin">
+        <mat-card>
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                    <div class="col-sm-12 col-md-12 col-lg-10">
+                        <mat-form-field style="width:80%">
+                            <mat-label>Country Name</mat-label>
+                            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                                cdkAutosizeMaxRows="5" [(ngModel)]="countryName"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                    <div class="col-sm-12 col-md-12 col-lg-10">
+                        <mat-form-field style="width:80%">
+                            <mat-label>Currency Code</mat-label>
+                            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                                cdkAutosizeMaxRows="5" [(ngModel)]="currencyCodeName"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                    <div class="col-sm-12 col-md-12 col-lg-10">
+                        <mat-form-field class="sub-input-control" style="width:80%">
+                            <mat-select placeholder="Territory" [disableRipple]="true" [(ngModel)]="territory" name="Territory">
+                                <mat-option *ngFor="let item of Territories" [value]="item">{{item}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="text-align:right">
+                    <div class="form-button">
+                        <button type="button" mat-raised-button color="basic">Reset</button>
+                        <!-- <button type="button" mat-raised-button color="primary" (click)="filter('Belarus','BL','Smart')">Search</button> -->
+                        <button type="button" mat-raised-button color="primary" (click)="filter(countryName,currencyCodeName,territoryName)">Search</button>
+                        <button type="button" mat-raised-button color="primary" (click)="openDialog()">Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- </mat-expansion-panel> -->
+            <!-- </mat-accordion> -->
+        </mat-card>
+    </div>
+</div>
+<br>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="workqueue-table">
+                            <table class="table table-responsive" matSort (matSortChange)="sortData($event)">
+                                <tbody>
+                                    <tr style="color:#702082;">
+                                        <th style="width:20%" mat-sort-header="CountryName">Country Name</th>
+                                        <th style="width:20%" mat-sort-header="CountryCode">Country Code</th>
+                                        <th style="width:20%" mat-sort-header="Territory">Territory</th>
+                                        <th style="width:10%">Action</th>
+                                    </tr>
+                                    <tr *ngFor='let item of tempdata'>
+                                        <td><a class="anchor" (click)='openDialog(item)'>{{item.country}}</a></td>
+                                        <td>{{item.countryCode}}</td>
+                                        <td>
+                                            <span *ngIf="!item.isSelect">
+                                                {{item.Territory}}
+                                            </span>
+                                            <span *ngIf="item.isSelect">
+                                                <mat-select placeholder="Territory" [disableRipple]="true" [(ngModel)]="territory"
+                                                    name="Territory">
+                                                    <mat-option *ngFor="let item of Territories" [value]="item">{{item}}</mat-option>
+                                                </mat-select>
+                                            </span>
+                                        </td>
+                                     
+                                        <td>
+                                            <span>
+                                                <a (click)='item.isSelect ? (item.isSelect = false) : (item.isSelect = true)'
+                                                    class="link-btn"><i class="material-icons" style="color:#558b2f;"
+                                                        data-toggle="tooltip" title="Edit Territory">create</i></a>
+                                            </span>
+                                            &nbsp; &nbsp;
+                                        </td>
+                                        <td>
+                                            <span *ngIf="item.isSelect" (click)='Save()'>
+                                                <i class="material-icons" title="Save"> save
+                                                </i>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                                (page)="pageEvent = $event">
+                            </mat-paginator>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

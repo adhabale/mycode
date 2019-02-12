@@ -1,0 +1,457 @@
+<div class="clearfix"></div>
+<div class="row" *ngIf="!formReview">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <p style="font-size: 14px;font-weight: bold; color: crimson">Please complete this form in English language, </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <!-- <div class="x_content"> -->
+      <fieldset [disabled]="checkUser(consultancyServicesForm)">
+        <form id="consultancyServicesForm" #consultancyServicesForm="ngForm">
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 1/9</span>{{'ConsultancyServices.qOne.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="input-control">
+                    <input matInput type="text" placeholder="{{'ConsultancyServices.qOne.placeholder'|translate}}"
+                      [(ngModel)]="servicesProvided" name="servicesProvided" required>
+                    <button mat-button *ngIf="servicesProvided" matSuffix mat-icon-button aria-label="Clear" (click)="servicesProvided=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!servicesProvided">
+                      <strong>{{'ConsultancyServices.qOne.error'|translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 2/9</span>{{'ConsultancyServices.qTwo.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous Text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="commencementDatePicker" placeholder="{{'ConsultancyServices.qTwo.placeholder'|translate}}"
+                      [(ngModel)]="commencementDate" name="commencementDate" required>
+                    <mat-datepicker-toggle matSuffix [for]="commencementDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #commencementDatePicker></mat-datepicker>
+                    <mat-error *ngIf="!commencementDate">
+                      <strong>{{'ConsultancyServices.qTwo.error'|translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 3/9</span>{{'ConsultancyServices.qThree.text'|translate}}<a tabindex="0" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'ConsultancyServices.qThree.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="question-subpart">
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.1/9</span>{{'ConsultancyServices.qThree.threeSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>Name</th>
+                                    <th>Nationality/Place of incorporation </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>FGH Entity</td>
+                                    <td>Russia</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>Name</th>
+                                <th>Nationality/Place of incorporation </th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>FGH Entity</td>
+                                <td>Russia</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.2/9</span>{{'ConsultancyServices.qThree.threeSubTwo.text'|translate}}<a tabindex="1"
+                            class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}"
+                            matTooltip="{{'ConsultancyServices.qThree.threeSubTwo.help'|translate}}">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th style="width: 5%"></th>
+                                    <th>Name</th>
+                                    <th>Nationality/Place of incorporation </th>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <!-- <mat-icon>remove</mat-icon> -->
+                                    </td>
+                                    <td>XYZ Company</td>
+                                    <td>UK</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>Name</th>
+                                <th>Nationality/Place of incorporation </th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>XYZ Company</td>
+                                <td>UK</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 4/9</span>{{'ConsultancyServices.qFour.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <app-multi-select-with-preview [list]="sanctionedCountries" [placeholder]="placeholder"></app-multi-select-with-preview>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 5/9</span>{{'ConsultancyServices.qFive.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-radio-group [(ngModel)]="usInvolved" name="usInvolved" [value]="usInvolved">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="1" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="0" checked color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="usInvolved=='1'">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Please explain the US involvement.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 6/9</span>{{'ConsultancyServices.qSix.text'|translate}}<a tabindex="2" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'ConsultancyServices.qSix.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-radio-group value="2" [(ngModel)]="usDecisions" name="usDecisions">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="1" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="2" color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="usDecisions=='1'">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Please explain decisions made in US.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 7/9</span>{{'ConsultancyServices.qSeven.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="input-control">
+                    <mat-select placeholder="{{'ConsultancyServices.qSeven.placeholder'|translate}}" [(ngModel)]="currencyValue"
+                      name="currencyValue" required multiple>
+                      <mat-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!currencyValue">
+                      <strong>{{'ConsultancyServices.qSeven.error'|translate}}</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q-8/9</span>{{'ConsultancyServices.qEight.text'|translate}}<a tabindex="3" class="btn" role="button"
+                    data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'ConsultancyServices.qEight.help'|translate}}">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-radio-group value="clientBusiness" [(ngModel)]="clientBusiness" name="clientBusiness">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="1" color="primary">Yes</mat-radio-button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <mat-radio-button value="2" color="primary">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                </div>
+                <div class="question-subpart" *ngIf="clientBusiness=='1'">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Please explain decisions made in US.</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 9/9</span>{{'ConsultancyServices.qNine.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>{{'ConsultancyServices.qNine.placeholder'|translate}}</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">{{'buttons.uploadDoc'|translate}}</button>
+            <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+            {{fileName}}
+          </div>
+          <!-- <div class="form-button">
+          <button type="button" *ngIf="amendment" class="btn btn-secondary" (click)="backToParent()" style="float: left">{{'buttons.backToList'|translate}}</button>
+          <button type="button" class="btn btn-secondary">{{'buttons.reset'|translate}}</button>
+          <button type="button" class="btn btn-secondary">{{'buttons.cancel'|translate}}</button>
+          <button type="button" mat-raised-button color="primary" disabled>{{'buttons.submit'|translate}}</button>
+        </div> -->
+        </form>
+      </fieldset>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

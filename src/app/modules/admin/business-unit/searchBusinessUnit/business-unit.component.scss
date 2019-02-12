@@ -1,0 +1,29 @@
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.scss';
+
+.custom-margin{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.anchor{
+    cursor: pointer!important;
+    color: #5FB8F2 !important ;
+}
+.left-margin{
+    margin-left: 45px!important;
+}
+.form-button{
+    margin-top: 10px;
+    text-align: right;
+}
+.form-button button{
+    margin-right: 8px;
+}
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

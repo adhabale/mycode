@@ -1,0 +1,37 @@
+::ng-deep h2{
+    font-family: Segoe UI;
+    font-size: 21px;
+    color:#702082;
+}
+.example-container {
+    width: 75%
+  } 
+.example-container > * {
+    width: 75%;
+  }
+  
+.btn-margin{
+    margin-left: 12%;
+}
+.left-margin{
+    margin-left: 50%!important;
+}
+.dialog-container {
+    text-align: center;
+}
+.field-margin{
+    margin-top: 15px;
+}
+.top-margin{
+    margin-top: 15px;
+}
+.modal-container {
+    width: 80%;
+    margin-left:15px;
+  }
+  .description-container {
+    width: 100%
+  } 
+.description-container > * {
+    width: 100%;
+  }

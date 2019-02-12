@@ -1,0 +1,19 @@
+<div class="col-sm-12 col-md-6 col-lg-6">
+  <mat-form-field class="input-control">
+    <mat-select (selectionChange)="add($event)" [formControl]="mulitSelectCtrl" placeholder="{{placeholder}}" multiple>
+      <mat-option *ngFor="let item of list" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="col-sm-12 col-md-6 col-lg-6">
+  <mat-form-field *ngIf="showPreview"  class="input-control-chiplist">
+    <mat-chip-list>
+      <mat-chip *ngFor="let selected of selectedValues" [selectable]="selectable" [removable]="removable" (removed)="remove(selected)">
+        {{selected}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-form-field>
+</div>

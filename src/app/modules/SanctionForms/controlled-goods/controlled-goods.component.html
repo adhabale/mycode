@@ -1,0 +1,810 @@
+<!--<div class="clearfix"></div>
+<div class="row" *ngIf='!amendment'>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <p style="font-size: 14px;font-weight: bold;color: crimson">Please complete this form in English language. </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <fieldset [disabled]="checkUser(controlledGoodsForm)">
+        <form id="controlledGoodsForm" [formGroup]='heroForm'>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 1/5</span>{{'controlledGoods.qOne.text'|translate}}
+                  <a class="btn" matTooltip="{{'controlledGoods.qOne.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="{{'controlledGoods.qOne.placeholder'|translate}}" formControlName='qOne' name="goodsDetail"
+                      required>
+                    <button mat-button *ngIf="goodsDetail" matSuffix mat-icon-button aria-label="Clear" (click)="goodsDetail=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!goodsDetail">
+                      {{'controlledGoods.qOne.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 2/5</span>{{'controlledGoods.qTwo.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="input-control" formGroupName="qTwo">
+                    <mat-select placeholder="{{'controlledGoods.qTwo.placeholder'|translate}}" [disableRipple]="true" formControlName='answer'
+                      name="goodsSource" required>
+                      <mat-option *ngFor="let sourceCountry of sourceCountries,let i=index" [(value)]="sourceCountry">{{sourceCountry.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!goodsSource">
+                      {{'controlledGoods.qTwo.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="question-group" style="margin-top:0px;" *ngIf="goodsSource!=null">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 2.1/5</span>{{'controlledGoods.qTwo.twoSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <mat-form-field class="input-control">
+                            <mat-select placeholder="{{'controlledGoods.qTwo.twoSubOne.placeholder'|translate}}" [disableRipple]="true" [(ngModel)]="goodsDestination"
+                              name="goodsDestination" required>
+                              <mat-option *ngFor="let sourceCountry of sourceCountries" [value]="sourceCountry">{{sourceCountry}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!goodsDestination">
+                              {{'controlledGoods.qTwo.twoSubOne.error'|translate}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group" style="border:none" *ngIf="goodsDestination!=null">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 2.2/5</span>{{'controlledGoods.qTwo.twoSubTwo.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <mat-form-field class="input-control">
+                            <mat-select placeholder="{{'controlledGoods.qTwo.twoSubTwo.placeholder'|translate}}" [disableRipple]="true" [(ngModel)]="goodsDestinationVia"
+                              name="goodsDestinationVia" required>
+                              <mat-option value="None">None</mat-option>
+                              <mat-option *ngFor="let sourceCountry of sourceCountries" [value]="sourceCountry">{{sourceCountry}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!goodsDestinationVia">
+                              {{'controlledGoods.qTwo.twoSubTwo.error'|translate}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 3/5</span>{{'controlledGoods.qThree.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="question-subpart">
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.1/13</span>{{'controlledGoods.qThree.threeSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th>{{'gridControl.name'|translate}}</th>
+                                    <th>{{'gridControl.nationality'|translate}}</th>
+                                  </tr>
+                                  <tr>
+                                    <td>ABC Entity</td>
+                                    <td>Turkey</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody formArrayName='qOne1'>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>{{'gridControl.name'|translate}}</th>
+                                <th>{{'gridControl.nationality'|translate}}</th>
+                              </tr>
+                             
+                                <tr *ngFor="let itemrow of heroForm.controls.qOne1.controls; let i=index" [formGroupName]="i">
+                   <td>
+                   <a (click)="deleteRow(i)"><mat-icon>remove</mat-icon></a>
+                    </td>
+                 
+                  <td> <input formControlName="itemname" class="form-control"></td>
+                   <td> <input formControlName="itemplace" class="form-control"></td>
+                </tr>
+
+                
+                              <tr>
+                                <td>
+                                  <a (click)='addNewRow()'>
+                                    <mat-icon color="primary">add_box</mat-icon>
+                                  </a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.2/5</span>{{'controlledGoods.qThree.threeSubTwo.text'|translate}}
+                       
+                          <a class="btn" matTooltip="{{'controlledGoods.qThree.threeSubTwo.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th>{{'gridControl.name'|translate}}</th>
+                                    <th>{{'gridControl.nationality'|translate}}</th>
+                                  </tr>
+                                  <tr>
+                                    <td>XYZ Airline</td>
+                                    <td>Belgium</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>{{'gridControl.name'|translate}}</th>
+                                <th>{{'gridControl.nationality'|translate}}</th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>XYZ Airline</td>
+                                <td>Belgium</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 4/5</span>{{'controlledGoods.qFour.text'|translate}}
+                  
+                  <a class="btn" matTooltip="{{'controlledGoods.qFour.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="input-control">
+                    <input matInput type="text" placeholder="{{'controlledGoods.qFour.placeholder'|translate}}" [(ngModel)]="goodsRecipients"
+                      name="goodsRecipients" required>
+                    <button mat-button *ngIf="goodsRecipients" matSuffix mat-icon-button aria-label="Clear" (click)="goodsRecipients=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!goodsRecipients">
+                      {{'controlledGoods.qFour.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 5/5</span>{{'controlledGoods.qFive.text'|translate}}
+                
+                  <a class="btn" matTooltip="{{'controlledGoods.qFive.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>{{'queryInformation.queryInfo'|translate}}</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">{{'buttons.uploadDoc'|translate}}</button>
+            <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" /> {{fileName}}
+          </div>
+        
+          <div *ngIf='hideBUBtn && !isSubmitted()' style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Back to List</button>
+          </div>
+          <p>
+            Form Value: {{ heroForm.value | json }}
+          </p>
+
+         
+
+
+
+          <div formArrayName="qOne1">
+            <div *ngFor="let itemrow of heroForm.controls.qOne1.controls; let i=index" [formGroupName]="i">
+              <h4>Invoice Row #{{ i + 1 }}</h4>
+              <div class="form-group">
+                <label>Item Name</label>
+                <input formControlName="itemname" class="form-control">
+              </div>
+              <button *ngIf="heroForm.controls.qOne1.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger">Delete Button</button>
+            </div>
+               </div>
+
+                  <table class="table">
+              <tbody formArrayName="qOne1">
+                <tr style="color:#702082;">
+                  <th></th>
+                  <th>{{'gridControl.name'|translate}}</th>
+                  <th>{{'gridControl.nationality'|translate}}</th>
+                </tr>
+                <tr *ngFor="let itemrow of heroForm.controls.qOne1.controls; let i=index" [formGroupName]="i">
+                   <td>
+                   <a *ngIf="heroForm.controls.qOne1.controls.length > 1" (click)="deleteRow(i)"><mat-icon>remove</mat-icon></a>
+                    </td>
+                 
+                  <td> <input formControlName="itemname" class="form-control"></td>
+                   <td> <input formControlName="itemname" class="form-control"></td>
+                </tr>
+              
+              </tbody>
+            </table>
+          <button type="button" (click)="addNewRow()" class="btn btn-primary">Add new Row</button>
+
+
+
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>
+-->
+
+
+
+
+
+<div class="clearfix"></div>
+<div class="row" *ngIf='!amendment'>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <p style="font-size: 14px;font-weight: bold;color: crimson">Please complete this form in English language. </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <form id="controlledGoodsForm" [formGroup]="controlledGoodsGroup">
+        <div formArrayName="controlledGoods">
+          <div class="question-group" formGroupName="0">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 1/5</span>{{'controlledGoods.qOne.text'|translate}}
+                  <a class="btn" matTooltip="{{'controlledGoods.qOne.help'|translate}}" matTooltipPosition="right"
+                    matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName="answer">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="{{'controlledGoods.qOne.placeholder'|translate}}"
+                    formControlName="goodsDetail" required>
+                    <button mat-button *ngIf="goodsDetail" matSuffix mat-icon-button aria-label="Clear" (click)="goodsDetail=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!goodsDetail">
+                      {{'controlledGoods.qOne.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group" formGroupName="1">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 2/5</span>{{'controlledGoods.qTwo.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart" formGroupName="answer">
+                  <mat-form-field class="input-control">
+                    <mat-select placeholder="{{'controlledGoods.qTwo.placeholder'|translate}}" [disableRipple]="true"
+                    formControlName="goodsSource" required>
+                      <mat-option *ngFor="let sourceCountry of sourceCountries" [value]="sourceCountry">{{sourceCountry}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!goodsSource">
+                      {{'controlledGoods.qTwo.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                  <div class="question-group" style="margin-top:0px;" *ngIf="goodsSource!=null">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 2.1/5</span>{{'controlledGoods.qTwo.twoSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <mat-form-field class="input-control">
+                            <mat-select placeholder="{{'controlledGoods.qTwo.twoSubOne.placeholder'|translate}}"
+                              [disableRipple]="true" [(ngModel)]="goodsDestination" name="goodsDestination" required>
+                              <mat-option *ngFor="let sourceCountry of sourceCountries" [value]="sourceCountry">{{sourceCountry}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!goodsDestination">
+                              {{'controlledGoods.qTwo.twoSubOne.error'|translate}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group" style="border:none" *ngIf="goodsDestination!=null">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 2.2/5</span>{{'controlledGoods.qTwo.twoSubTwo.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p>
+                                Previous text.
+                              </p>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <mat-form-field class="input-control">
+                            <mat-select placeholder="{{'controlledGoods.qTwo.twoSubTwo.placeholder'|translate}}"
+                              [disableRipple]="true" [(ngModel)]="goodsDestinationVia" name="goodsDestinationVia"
+                              required>
+                              <mat-option value="None">None</mat-option>
+                              <mat-option *ngFor="let sourceCountry of sourceCountries" [value]="sourceCountry">{{sourceCountry}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!goodsDestinationVia">
+                              {{'controlledGoods.qTwo.twoSubTwo.error'|translate}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 3/5</span>{{'controlledGoods.qThree.text'|translate}}
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="question-subpart">
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.1/13</span>{{'controlledGoods.qThree.threeSubOne.text'|translate}}
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th>{{'gridControl.name'|translate}}</th>
+                                    <th>{{'gridControl.nationality'|translate}}</th>
+                                  </tr>
+                                  <tr>
+                                    <td>ABC Entity</td>
+                                    <td>Turkey</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>{{'gridControl.name'|translate}}</th>
+                                <th>{{'gridControl.nationality'|translate}}</th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>ABC Entity</td>
+                                <td>Turkey</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 3.2/5</span>{{'controlledGoods.qThree.threeSubTwo.text'|translate}}
+                          <a class="btn" matTooltip="{{'controlledGoods.qThree.threeSubTwo.help'|translate}}"
+                            matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <table class="table">
+                                <tbody>
+                                  <tr style="color:#702082;">
+                                    <th>{{'gridControl.name'|translate}}</th>
+                                    <th>{{'gridControl.nationality'|translate}}</th>
+                                  </tr>
+                                  <tr>
+                                    <td>XYZ Airline</td>
+                                    <td>Belgium</td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>{{'gridControl.name'|translate}}</th>
+                                <th>{{'gridControl.nationality'|translate}}</th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>XYZ Airline</td>
+                                <td>Belgium</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 4/5</span>{{'controlledGoods.qFour.text'|translate}}
+                  <a class="btn" matTooltip="{{'controlledGoods.qFour.help'|translate}}" matTooltipPosition="right"
+                    matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="input-control">
+                    <input matInput type="text" placeholder="{{'controlledGoods.qFour.placeholder'|translate}}"
+                      [(ngModel)]="goodsRecipients" name="goodsRecipients" required>
+                    <button mat-button *ngIf="goodsRecipients" matSuffix mat-icon-button aria-label="Clear" (click)="goodsRecipients=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-error *ngIf="!goodsRecipients">
+                      {{'controlledGoods.qFour.error'|translate}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-group">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="question-body">
+                  <span>Q- 5/5</span>{{'controlledGoods.qFive.text'|translate}}
+                  <a class="btn" matTooltip="{{'controlledGoods.qFive.help'|translate}}" matTooltipPosition="right"
+                    matTooltipClass="custom-tooltip">
+                    <mat-icon class="help-text">info_outlined</mat-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="amendment" *ngIf="amendment">
+                  <mat-card>
+                    <mat-card-header>
+                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                      <p>
+                        Previous text.
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                <div class="question-subpart">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>{{'queryInformation.queryInfo'|translate}}</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" mat-raised-button color="primary" (click)="uploadFile()">{{'buttons.uploadDoc'|translate}}</button>
+            <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+            {{fileName}}
+          </div>
+          <div *ngIf='hideBUBtn && !isSubmitted()' style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Back to List</button>
+          </div> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

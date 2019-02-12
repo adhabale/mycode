@@ -1,0 +1,513 @@
+<div class="clearfix"></div>
+<div class="row" style="margin-top:20px">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+
+    <div class="x_panel">
+
+      <div>
+        <div class="row" style="margin-top:20px">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Activity Type: </label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>Claim</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Policy Type :</label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>New</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Sanction Type :</label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>Insurance or Reinsurance Form</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Policy No :</label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>456255</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Claim Date :</label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>1/23/2019</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 col-lg-5">
+                <label style="font-weight:bold">Claim Details :</label>
+              </div>
+              <div class="col-sm-12 col-md-3 col-lg-7">
+                <p>Details will be added here...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <form id="standardSanctionForm" #standardSanctionForm="ngForm">
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 1/13</span>{{'standardsSanction.qOne.text'|translate}}
+                <a tabindex="0" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}"
+                  matTooltip="{{'standardsSanction.qOne.help'|translate}}" matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                  <mat-icon class="help-text" (click)="showInfo()">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <table class="table">
+                  <tbody>
+                    <tr style="color:#702082;">
+                      <th>{{'standardsSanction.qOne.answerGrid.bUArea'|translate}}</th>
+                      <th>{{'standardsSanction.qOne.answerGrid.loaction'|translate}}</th>
+                      <th>{{'standardsSanction.qOne.answerGrid.legalEntity'|translate}}</th>
+                    </tr>
+                    <tr>
+                      <td>Marine – GB</td>
+                      <td>London</td>
+                      <td>Willis Towers Watson Consulting </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 2/13</span>{{'standardsSanction.qTwo.text'|translate}}<a tabindex="1" class="btn" role="button"
+                  data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qTwo.help'|translate}}"
+                  matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label style="font-weight:bold">Inception Date</label>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label>18-Jan-2018</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label style="font-weight:bold">Duration</label>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label>-1 Year Policy</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 3/13</span>{{'standardsSanction.qThree.text'|translate}}
+                (including place of incorporation or nationality)?<a tabindex="2" class="btn" role="button" data-toggle="popover"
+                  data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'standardsSanction.qThree.help'|translate}}">
+
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 3.1/13</span>{{'standardsSanction.qThree.threeSubOne.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <table class="table">
+                          <tbody>
+                            <tr style="color:#702082;">
+                              <th>{{'standardsSanction.grid.name'|translate}}</th>
+                              <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                            </tr>
+                            <tr>
+                              <td>ABC Airline</td>
+                              <td>UK</td>
+                            </tr>
+                            <tr>
+                              <td>STR Airline</td>
+                              <td>Russia</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 3.2/13</span>{{'standardsSanction.qThree.threeSubTwo.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <table class="table">
+                          <tbody>
+                            <tr style="color:#702082;">
+
+                              <th>{{'standardsSanction.grid.name'|translate}}</th>
+                              <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                            </tr>
+                            <tr>
+                              <td>XYZ Company</td>
+                              <td>UK</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 3.3/13</span>{{'standardsSanction.qThree.threeSubThree.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <table class="table">
+                          <tbody>
+                            <tr style="color:#702082;">
+                              <th>Name</th>
+                              <th>Nationality/Place of incorporation </th>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group" style="border:none">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 3.4/13</span>{{'standardsSanction.qThree.threeSubFour.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <table class="table">
+                          <tbody>
+                            <tr style="color:#702082;">
+                              <th>{{'standardsSanction.grid.name'|translate}}</th>
+                              <th>{{'standardsSanction.grid.nationality'|translate}} </th>
+                            </tr>
+                            <tr>
+                              <td>N/A</td>
+                              <td>N/A</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 4/13</span>{{'standardsSanction.qFour.text'|translate}}
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>Russia,Egypt,Afghanistan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 5/13</span>{{'standardsSanction.qFive.text'|translate}}<a tabindex="3" class="btn" role="button"
+                  data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qFive.help'|translate}}"
+                  matTooltipPosition="right" matTooltipClass="custom-tooltip">
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>Liability</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 6/13</span>{{'standardsSanction.qSix.text'|translate}}<a tabindex="4" class="btn" role="button"
+                  data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}" matTooltip="{{'standardsSanction.qSix.help'|translate}}">
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>Airport and aircraft buildings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 7/13</span>{{'standardsSanction.qSeven.help'|translate}}
+                <a tabindex="5" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.example'|translate}}"
+                  matTooltip="{{'standardsSanction.qSeven.help'|translate}}">
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>No</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 8/13</span>{{'standardsSanction.qEight.text'|translate}}
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>No</p>
+              </div>
+              <div class="question-subpart" *ngIf="usInvolved=='1'">
+                <p>Test data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 9/13</span>{{'standardsSanction.qNine.text'|translate}}
+                <a tabindex="6" class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}"
+                  matTooltip="{{'standardsSanction.qNine.help'|translate}}">
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>No</p>
+              </div>
+              <div class="question-subpart" *ngIf="usDecisions=='1'">
+                <p>Test data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 10/13</span>{{'standardsSanction.qTen.help'|translate}}<a tabindex="7" class="btn" role="button"
+                  data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'standardsSanction.qTen.help'|translate}}">
+                  <mat-icon class="help-text">info_outlined</mat-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>No</p>
+              </div>
+              <div class="question-subpart" *ngIf="usUnderwriters=='1'">
+                <p>Test data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 11/13</span>{{'standardsSanction.qEleven.text'|translate}}
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label style="font-weight:bold">Premiums</label>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label>GBP</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label style="font-weight:bold">Claims</label>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-3">
+                    <label>HKD</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 12/13</span>{{'standardsSanction.qTwelve.text'|translate}}
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 12.1/13</span>{{'standardsSanction.qTwelve.twelveSubOne.text'|translate}}<a tabindex="8"
+                          class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.notr'|translate}}"
+                          matTooltip="{{'standardsSanction.qTwelve.twelveSubOne.help'|translate}}">
+                          <mat-icon class="help-text">info_outlined</mat-icon>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 12.2/13</span>{{'standardsSanction.qTwelve.twelveSubTwo.text'|translate}}<a tabindex="9"
+                          class="btn" role="button" data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}"
+                          matTooltip="{{'standardsSanction.qTwelve.twelveSubTwo.help'|translate}}">
+                          <mat-icon class="help-text">info_outlined</mat-icon>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group" style="border:none;">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 12.3/13</span>{{'standardsSanction.qTwelve.twelveSubThree.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-group">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="question-body">
+                <span>Q- 13/13</span>{{'standardsSanction.qThirteen.text'|translate}}
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="question-subpart">
+                <p>Test data</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;" *ngIf="controlledGoodsInvolvement!='1'">
+          <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">{{'buttons.uploadDoc'|translate}}</button>
+          <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+          {{fileName}}
+        </div>
+        <div *ngIf='isSubmitted()' style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">{{'buttons.backToList'|translate}}</button>
+        </div>
+        <div class="form-button" *ngIf='isSubmitted()'>
+          <button type="button" mat-raised-button >Comment</button>
+          <button mat-raised-button >{{'buttons.raiseQuery'|translate}}</button>
+          <button type="button" mat-raised-button (click)='onDecline()'>{{'buttons.decline'|translate}}</button>
+          <button type="button" mat-raised-button (click)='onApprove()' color="primary">{{'buttons.approve'|translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

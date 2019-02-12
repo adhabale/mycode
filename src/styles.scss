@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../src/assets/CSS/custom.scss";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #702082;
+}
+h2{
+    font-family: Segoe UI;
+    font-size: 18px;
+    color: #202020;
+}
+.footer-content{
+    background-color: #f0efde;
+    font-size: .75rem;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.mat-step-header .mat-step-icon-selected,
+.mat-radio-button.mat-primary .mat-radio-inner-circle,
+.mat-raised-button.mat-primary{
+    background-color: #702082;
+}
+.mat-step-header .mat-step-icon-selected{
+    /* background-color: #202020; */
+    background-color: #702082;
+}
+.mat-step-header .mat-step-icon-state-edit,
+.mat-raised-button.mat-accent{
+    background-color: #b7b6a9;
+}
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle{
+    border-color: #702082;
+}
+.mat-primary .mat-pseudo-checkbox-checked{
+    background: #702082;
+}
+.mat-form-field-invalid .mat-input-element{
+    caret-color:#f44336;
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label,
+.mat-step-text-label{
+    color: #202020;
+    font-weight:bold;
+}
+.mat-card{
+    margin: 5px 0px;
+}
+.mat-button,
+.mat-card,
+.mat-expansion-panel-header{
+    font-family: Segoe UI;
+    /* font-size: 16px;     */
+}
+.custom-margin{
+    margin: 15px 0;
+}
+.table td{
+    vertical-align: middle;
+}
+table tr:nth-child(even) {
+    background-color: #e0e0e0;
+}
+table tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+.mat-stepper-horizontal,
+.mat-raised-button,
+.mat-table{
+    font-family: Segoe UI;
+}

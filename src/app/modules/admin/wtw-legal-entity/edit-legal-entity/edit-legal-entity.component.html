@@ -1,0 +1,34 @@
+<div >
+    <h2>Edit Legal Entity Information</h2>
+    <div>
+        <div class="modal-container example-container">
+    <mat-form-field class="field-margin">
+      <mat-label>WTW Legal Entity Name</mat-label>
+      <input matInput [(ngModel)]="data.name"  name="LegalEntityName"required>
+      <button mat-button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      <mat-error *ngIf="!LegalEntityName">
+        Entity Name <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+ <div class="modal-container decription-container ">
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="data.description" name="InsuranceDescription" rows="5" required></textarea>
+      <mat-error *ngIf="!InsuranceDescription">
+        Insurance Description  <strong>required</strong>
+      </mat-error>
+    </mat-form-field>  
+  </div>
+
+    
+  
+<div class="left-margin">  
+  <button mat-button mat-raised-button color="basic" (click)="onNoClick()">Cancel</button>
+  <button class="btn-margin" mat-button mat-raised-button color="primary" cdkFocusInitial>Save</button>
+</div>
+
+
+</div>

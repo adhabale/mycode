@@ -1,0 +1,199 @@
+<div class="clearfix"></div>
+<div class="row" style="margin-top:20px">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <div class="question-group">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="question-body">
+              <span>Q- 1/9</span>{{'ConsultancyServices.qOne.text'|translate}}
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="question-subpart">
+              <p>Test data</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question-group">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="question-body">
+              <span>Q- 2/9</span>{{'ConsultancyServices.qTwo.text'|translate}}
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="question-subpart">
+              <p>1/8/2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question-group">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-sm-12">
+            <div class="question-body">
+              <span>Q 3/9</span>{{'ConsultancyServices.qThree.text'|translate}}
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-sm-12">
+            <div class="question-subpart">
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-sm-12">
+                    <div class="question-body">
+                      <span>Q 3.1/9</span>{{'ConsultancyServices.qThree.threeSubOne.text'|translate}}
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-sm-12">
+                      <div class="question-subpart">
+                        <table mat-table [dataSource]="dataSource" class="table">
+                          <tbody>
+                            <ng-container matColumnDef="name">
+                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="placeOfIncorporation">
+                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place Of Incorporation </th>
+                              <td mat-cell *matCellDef="let element"> {{element.placeOfIncorporation}} </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            <tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-sm-12">
+                    <div class="question-body">
+                      <span>Q 3.2/9</span>{{'ConsultancyServices.qThree.threeSubTwo.text'|translate}}
+                    </div>
+
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-sm-12">
+
+                    <div class="question-subpart">
+                      <table mat-table [dataSource]="dataSource" class="table">
+                        <tbody>
+                          <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="placeOfIncorporation">
+                            <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place Of Incorporation </th>
+                            <td mat-cell *matCellDef="let element"> {{element.placeOfIncorporation}} </td>
+                          </ng-container>
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          <tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <div class="question-group">
+        
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+        
+              <div class="question-body">
+                <span>Q 4/9</span>{{'ConsultancyServices.qFour.text'|translate}}
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="question-subpart">
+                <p>Russia, Afghanistan, Ukraine</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+     
+      <div class="question-group">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="question-body">
+              <span>Q 5/9</span>{{'ConsultancyServices.qFive.text'|translate}}
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="question-subpart">
+            <p>Yes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="question-body">
+            <span>Q 6/9</span>{{'ConsultancyServices.qSix.text'|translate}}
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="question-subpart">
+            <p>Yes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="question-body">
+            <span>Q 7/9</span>{{'ConsultancyServices.qSeven.text'|translate}}
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="question-subpart">
+            <p>GBP, HKD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-group">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="question-body">
+              <span>Q 8/9</span>{{'ConsultancyServices.qEight.text'|translate}}
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="question-subpart">
+              <p>Yes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-group">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="question-body">
+                <span>Q 9/9</span>{{'ConsultancyServices.qNine.text'|translate}}
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="question-subpart">
+                <p>Test Data</p>
+              </div>
+            </div>
+          </div>
+        
+
+
+  </div>
+</div>

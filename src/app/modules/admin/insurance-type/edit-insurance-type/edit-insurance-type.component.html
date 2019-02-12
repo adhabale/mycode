@@ -1,0 +1,40 @@
+<div >
+    <h2>Edit Insurance Type Information</h2>
+    <div class="modal-container example-container">
+    <mat-form-field class="field-margin">
+      <mat-label>Insurance Type Name</mat-label>
+      <input matInput [(ngModel)]="data.name" name="InsuranceType" required>
+      <button mat-button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      <mat-error *ngIf="!InsuranceType">
+        Insurance Type Name <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="field-margin">
+      <mat-label>Insurance Type Group</mat-label>
+      <input matInput [(ngModel)]="data.group" name="InsuranceTypeGroup" required>
+      <button mat-button *ngIf="data.group" matSuffix mat-icon-button aria-label="Clear" (click)="data.group=''">
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="!InsuranceTypeGroup">
+        Insurance Type Group  <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="modal-container description-container">
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="data.descriptions" name="InsuranceDescription" rows="5" required></textarea>
+    <mat-error *ngIf="!InsuranceDescription">
+      Insurance Description <strong>required</strong>
+    </mat-error>
+  </mat-form-field>  
+  </div>
+  <div class="left-margin">
+    <button mat-button mat-raised-button color="basic" (click)="onNoClick()">Cancel</button>
+    <button class="btn-margin" mat-button mat-raised-button color="primary" cdkFocusInitial>Save</button>
+  </div>
+
+</div>

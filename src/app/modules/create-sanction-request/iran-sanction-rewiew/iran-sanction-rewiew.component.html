@@ -1,0 +1,1174 @@
+<div class="clearfix"></div>
+<div class="row" style="margin-top:20px">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-5">
+          <label style="font-weight:bold">Activity Type: </label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-7">
+          <p>Claim</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-5">
+          <label style="font-weight:bold">Policy Type :</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-7">
+          <p>New</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-5">
+            <label style="font-weight:bold">Sanction Type :</label>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-7">
+            <p>Iran Transactions Form</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-5">
+            <label style="font-weight:bold">Policy No :</label>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-7">
+            <p>456255</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-5">
+              <label style="font-weight:bold">Claim Date :</label>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-7">
+              <p>1/23/2019</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-5">
+              <label style="font-weight:bold">Claim Details :</label>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-7">
+              <p>Details will be added here...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="x_panel">
+      <fieldset [disabled]="checkUser(iranSanctionForm1,iranSanctionForm2,iranSanctionForm3,iranSanctionForm4,iranSanctionForm5)">
+        <form id="iranSanctionForm" #iranSanctionForm1="ngForm">
+          <mat-vertical-stepper [linear]="true" labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <ng-template matStepLabel>{{'iranSanction.questionType.name'|translate}}</ng-template>
+                            <!-- <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                          <span>Q- 1/32</span> {{'iranSanction.qOne.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Business Area: Marine – GB , Office location : London , WTW Legal Entity: Willis Towers Watson Consulting</p>
+                        </div>
+                    </div>
+                  </div>
+                </div> -->
+
+
+                <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 1/32</span>{{'iranSanction.qOne.text'|translate}}<a tabindex="0" class="btn" role="button"
+                            data-toggle="popover" data-trigger="focus" >
+                            
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+    
+                        <div class="amendment" *ngIf="amendment">
+                          <mat-card>
+                            <mat-card-header>
+                              <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+
+                                <table mat-table [dataSource]="dataSource" class="table">
+                                    <tbody>
+                                      <ng-container matColumnDef="BusinessArea">
+                                        <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Business Area </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.BusinessArea}} </td>
+                                      </ng-container>
+                                      <ng-container matColumnDef="Officelocation">
+                                        <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Office Location </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.Officelocation}} </td>
+                                      </ng-container>
+                                      <ng-container matColumnDef="WTWLegalEntity">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> WTW Legal Entity</th>
+                                          <td mat-cell *matCellDef="let element"> {{element.WTWLegalEntity}} </td>
+                                        </ng-container>
+                                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                      <tbody>
+                                  </table>
+                             
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                        <div class="question-subpart">
+                          <!-- <table class="table">
+                            <tbody>
+                              <tr style="color:#702082;">
+                                <th style="width: 5%"></th>
+                                <th>{{'iranSanction.qOne.answerGrid.bUArea'|translate}}</th>
+                                <th>{{'iranSanction.qOne.answerGrid.loaction'|translate}}</th>
+                                <th>{{'iranSanction.qOne.answerGrid.legalEntity'|translate}}</th>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon>remove</mat-icon>
+                                </td>
+                                <td>
+                                  Marine – GB</td>
+                                <td>London</td>
+                                <td>Willis Towers Watson Consulting </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <mat-icon color="primary">add_box</mat-icon>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table> -->
+
+                          <table mat-table [dataSource]="dataSource" class="table">
+                              <tbody>
+                                <ng-container matColumnDef="BusinessArea">
+                                  <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Business Area </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.BusinessArea}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Officelocation">
+                                  <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Office Location </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.Officelocation}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="WTWLegalEntity">
+                                    <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> WTW Legal Entity</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.WTWLegalEntity}} </td>
+                                  </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 2/32 </span>{{'iranSanction.qTwo.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Inception Date: 1/8/2019 , Duaration : 2 Year Policy</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 3/32</span> {{'iranSanction.qThree.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>health and benefits advisory</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 4/32</span> {{'iranSanction.qFour.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Details will be added here.....</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 5/32</span> {{'iranSanction.qFive.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Details will be added here.....</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 6/32</span> {{'iranSanction.qSix.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>A single risk policy only relating to the sanctioned country</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="question-group">
+                <!-- <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 7/32</span> {{'iranSanction.qSeven.text'|translate}}
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 7/32</span><div>{{'iranSanction.qSeven.text'|translate}}</div>
+                        </div>
+                      </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Details will be added</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 8/32</span> {{'iranSanction.qEight.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Russia, Iraq, Egypt</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="question-group">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-body">
+                      <span>Q- 9/32</span> {{'iranSanction.qNine.text'|translate}}
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="question-subpart">
+                      <p>Premium: HKD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-button">
+                <button mat-raised-button color="primary" matStepperNext>Next Step</button>
+              </div>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form #iranSanctionForm2="ngForm">
+                <ng-template matStepLabel>{{'iranSanction.questionType.parties'|translate}}</ng-template>
+
+                <!-- <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="question-body">
+                        <span>Q- 10/32</span> {{'iranSanction.qTen.text'|translate}} <a tabindex="3" class="btn" role="button"
+                          data-toggle="popover" data-trigger="focus">
+
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="question-subpart">
+                        <div class="question-group">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-body">
+                                <span>Q- 10.1/32</span>{{'iranSanction.qTen.tenSubOne.text'|translate}}
+                              </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-subpart">
+                                <p>Premium: HKD</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="question-group">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-body">
+                                <span>Q- 10.2/32</span>{{'iranSanction.qTen.tenSubTwo.text'|translate}}
+                              </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-subpart">
+                                <p>Premium: HKD</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="question-group">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-body">
+                                <span>Q- 10.2/32</span>{{'iranSanction.qTen.tenSubTwo.text'|translate}}
+                              </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-subpart">
+                                <p>Premium: HKD</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="question-group">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-body">
+                                <span>Q- 10.3/32</span>{{'iranSanction.qTenSubThree.text'|translate}}
+                              </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-subpart">
+                                <p>Premium: HKD</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="question-group">
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-body">
+                                <span>Q- 10.4/32</span>{{'iranSanction.qTen.tenSubFour.text'|translate}}
+                              </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-12">
+                              <div class="question-subpart">
+                                <p>Premium: HKD</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="question-group">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="question-body">
+                          <span>Q- 10/32</span>{{'iranSanction.qTen.text'|translate}} 
+                          <a tabindex="3" class="btn" role="button"
+                            data-toggle="popover" data-trigger="focus" title="{{'helpText.note'|translate}}" matTooltip="{{'iranSanction.qTen.help'|translate}}">
+                            <mat-icon class="help-text">info_outlined</mat-icon>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="question-subpart">
+                          <div class="question-group">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="question-body">
+                                  <span>Q- 10.1/32</span>{{'iranSanction.qTen.tenSubOne.text'|translate}}
+                                </div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-12">
+  
+                                <div class="amendment" *ngIf="amendment">
+                                  <mat-card>
+                                    <mat-card-header>
+                                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                      <!-- <table class="table">
+                                        <tbody>
+                                          <tr style="color:#702082;">
+                                            <th style="width: 5%"></th>
+                                            <th>{{'iranSanction.grid.name'|translate}}</th>
+                                            <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                          </tr>
+                                          <tr>
+                                            <td>
+                                             </td>
+                                            <td>UN</td>
+                                            <td>Switzerland</td>
+                                          </tr>
+                                        </tbody>
+                                      </table> -->
+
+                                      <table mat-table [dataSource]="dataSource1" class="table">
+                                          <tbody>
+                                            <ng-container matColumnDef="Name">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                            </ng-container>
+                                            
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                            <tbody>
+                                        </table>
+
+                                    </mat-card-content>
+                                  </mat-card>
+                                </div>
+                                <div class="question-subpart">
+                                  <!-- <table class="table">
+                                    <tbody>
+                                      <tr style="color:#702082;">
+                                        <th style="width: 5%"></th>
+                                        <th>{{'iranSanction.grid.name'|translate}}</th>
+                                        <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon>remove</mat-icon>
+                                        </td>
+                                        <td>UN</td>
+                                        <td>Switzerland</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon color="primary">add_box</mat-icon>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table> -->
+
+                                  <table mat-table [dataSource]="dataSource1" class="table">
+                                      <tbody>
+                                        <ng-container matColumnDef="Name">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                        </ng-container>
+                                        <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                        </ng-container>
+                                        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                        <tbody>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="question-group">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="question-body">
+                                  <span>Q- 10.2/13</span>{{'iranSanction.qTen.tenSubTwo.text'|translate}}
+                                </div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-12">
+  
+                                <div class="amendment" *ngIf="amendment">
+                                  <mat-card>
+                                    <mat-card-header>
+                                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                      <!-- <table class="table">
+                                        <tbody>
+                                          <tr style="color:#702082;">
+                                            <th style="width: 5%"></th>
+                                            <th>{{'iranSanction.grid.name'|translate}}</th>
+                                            <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                          </tr>
+                                          <tr>
+                                            <td>                                              
+                                            </td>
+                                            <td>UN</td>
+                                            <td>Switzerland</td>
+                                          </tr>
+                                        </tbody>
+                                      </table> -->
+                                      <table mat-table [dataSource]="dataSource1" class="table">
+                                          <tbody>
+                                            <ng-container matColumnDef="Name">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                            </ng-container>
+                                            
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                            <tbody>
+                                        </table>
+                                    </mat-card-content>
+                                  </mat-card>
+                                </div>
+                                <div class="question-subpart">
+                                    <table mat-table [dataSource]="dataSource1" class="table">
+                                        <tbody>
+                                          <ng-container matColumnDef="Name">
+                                            <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                          </ng-container>
+                                          <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                            <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                          </ng-container>
+                                          
+                                          <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                          <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                          <tbody>
+                                      </table>
+                                  <!-- <table class="table">
+                                    <tbody>
+                                      <tr style="color:#702082;">
+                                        <th style="width: 5%"></th>
+                                        <th>{{'iranSanction.grid.name'|translate}}</th>
+                                        <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon>remove</mat-icon>
+                                        </td>
+                                        <td>UN</td>
+                                        <td>Switzerland</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon color="primary">add_box</mat-icon>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="question-group">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="question-body">
+                                  <span>Q- 10.3/32</span>{{'iranSanction.qTen.tenSubThree.text'|translate}}
+                                </div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-12">
+  
+                                <div class="amendment" *ngIf="amendment">
+                                  <mat-card>
+                                    <mat-card-header>
+                                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                      <!-- <table class="table">
+                                        <tbody>
+                                          <tr style="color:#702082;">
+                                            <th style="width: 5%"></th>
+                                            <th>{{'iranSanction.grid.name'|translate}}</th>
+                                            <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                        </tbody>
+                                      </table> -->
+
+                                      <table mat-table [dataSource]="dataSource1" class="table">
+                                          <tbody>
+                                            <ng-container matColumnDef="Name">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                            </ng-container>
+                                            
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                            <tbody>
+                                        </table>
+                                    </mat-card-content>
+                                  </mat-card>
+                                </div>
+                                <div class="question-subpart">
+                                  <!-- <table class="table">
+                                    <tbody>
+                                      <tr style="color:#702082;">
+                                        <th style="width: 5%"></th>
+                                        <th>{{'iranSanction.grid.name'|translate}}</th>
+                                        <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon color="primary">add_box</mat-icon>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table> -->
+                                  <table mat-table [dataSource]="dataSource1" class="table">
+                                      <tbody>
+                                        <ng-container matColumnDef="Name">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                        </ng-container>
+                                        <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                        </ng-container>
+                                        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                        <tbody>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="question-group" style="border:none">
+                            <div class="row">
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="question-body">
+                                  <span>Q- 10.4/32</span>{{'iranSanction.qTen.tenSubFour.text'|translate}} <a tabindex="4"
+                                    class="btn" role="button" data-toggle="popover" data-trigger="focus" >
+                                    
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="col-sm-12 col-md-12 col-lg-12">
+  
+                                <div class="amendment" *ngIf="amendment">
+                                  <mat-card>
+                                    <mat-card-header>
+                                      <mat-card-title>{{'previousAnswer'|translate}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                      <!-- <table class="table">
+                                        <tbody>
+                                          <tr style="color:#702082;">
+                                            <th style="width: 5%"></th>
+                                            <th>{{'iranSanction.grid.name'|translate}}</th>
+                                            <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                          </tr>
+                                          <tr>
+                                            <td>                                             
+                                            </td>
+                                            <td>N/A</td>
+                                            <td>N/A</td>
+                                          </tr>
+                                        </tbody>
+                                      </table> -->
+                                      <table mat-table [dataSource]="dataSource1" class="table">
+                                          <tbody>
+                                            <ng-container matColumnDef="Name">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                              <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                            </ng-container>
+                                            
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                            <tbody>
+                                        </table>
+                                    </mat-card-content>
+                                  </mat-card>
+                                </div>
+                                <div class="question-subpart">
+                                  <!-- <table class="table">
+                                    <tbody>
+                                      <tr style="color:#702082;">
+                                        <th style="width: 5%"></th>
+                                        <th>{{'iranSanction.grid.name'|translate}}</th>
+                                        <th>{{'iranSanction.grid.nationality'|translate}} </th>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon>remove</mat-icon>
+                                        </td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <mat-icon color="primary">add_box</mat-icon>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table> -->
+
+                                  <table mat-table [dataSource]="dataSource1" class="table">
+                                      <tbody>
+                                        <ng-container matColumnDef="Name">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                                        </ng-container>
+                                        <ng-container matColumnDef="NationalityPlaceofincorporation">
+                                          <th mat-header-cell *matHeaderCellDef style="color: #702082;font-weight: bold;"> Nationality/Place of incorporation </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.NationalityPlaceofincorporation}} </td>
+                                        </ng-container>
+                                        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                                        <tbody>
+                                    </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 11/32</span>{{'iranSanction.qEleven.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Details will be added here...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 12/32</span>{{'iranSanction.qTwelve.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 13/32</span>{{'iranSanction.qThirteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+                  <div class="form-button-left">
+                    <button color="accent" mat-raised-button matStepperPrevious>Previous Step</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+                  <div class="form-button-right">
+                    <button mat-raised-button color="primary" matStepperNext>Next Step</button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+              <form #iranSanctionForm3="ngForm">
+                <ng-template matStepLabel>{{'iranSanction.questionType.usInvolvement'|translate}}</ng-template>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 14/32</span>{{'iranSanction.qForteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 15/32</span>{{'iranSanction.qFifteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 16/32</span>{{'iranSanction.qSixteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 17/32</span>{{'iranSanction.qSixteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+                  <div class="form-button-left">
+                    <button color="accent" mat-raised-button matStepperPrevious>Previous Step</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+                  <div class="form-button-right">
+                    <button mat-raised-button color="primary" matStepperNext>Next Step</button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="fourthFormGroup">
+              <form #iranSanctionForm4="ngForm">
+                <ng-template matStepLabel>{{'iranSanction.questionType.insurance'|translate}}</ng-template>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 18/32</span>{{'iranSanction.qEighteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 19/5</span>{{'iranSanction.qNineteen.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>85%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 20/32</span>{{'iranSanction.qTwenty.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Facultative</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 21/32</span>{{'iranSanction.qTwentyOne.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Charterers A</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+                  <div class="form-button-left">
+                    <button color="accent" mat-raised-button matStepperPrevious>Previous Step</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+                  <div class="form-button-right">
+                    <button mat-raised-button color="primary" matStepperNext>Next Step</button>
+                  </div>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="fifthFormGroup">
+              <form #iranSanctionForm5="ngForm">
+                <ng-template matStepLabel>{{'iranSanction.questionType.iranianExposure'|translate}}</ng-template>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 22/32</span>{{'iranSanction.qTwentyTwo.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 23/32</span>{{'iranSanction.qTwentyThree.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 24/32</span>{{'iranSanction.qTwentyFour.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Details will be added here...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 25/32</span>{{'iranSanction.qTwentyFive.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 26/32</span>{{'iranSanction.qTwentySix.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 27/32</span>{{'iranSanction.qTwentySeven.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 28/32</span>{{'iranSanction.qTwentyEight.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 29/32</span>{{'iranSanction.qTwentyNine.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 30/32</span>{{'iranSanction.qThirty.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>No</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 31/32</span>{{'iranSanction.qThirtyOne.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Yes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="question-group">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-body">
+                        <span>Q- 32/32</span>{{'iranSanction.qThirtyTwo.text'|translate}}
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                      <div class="question-subpart">
+                        <p>Details will be added here...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+                  <div class="form-button-left">
+                    <button class="btn btn-secondary" matStepperPrevious>Previous Step</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+                  <div class="form-button-right">
+                    <button (click)="stepper.reset()" class="btn btn-secondary">Reset</button>
+                  </div>
+                </div>
+
+              </form>
+            </mat-step>
+          </mat-vertical-stepper>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>

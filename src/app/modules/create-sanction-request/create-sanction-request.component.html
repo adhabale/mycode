@@ -1,0 +1,241 @@
+<div class="page-title">
+  <div class="title_left">
+    <h1>Initiate Sanctions Request</h1>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <mat-card>
+      <form [formGroup]="createSanctionGroup">
+        <mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
+          <mat-step [stepControl]="activityFormGroup">
+            <ng-template matStepLabel>Sanction Activity Type</ng-template>
+            <div class="stepper-control">
+              <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                  <label>Activity Type</label>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-8">
+                  <mat-radio-group class="activity-radio-group" formControlName="sanctionActivityType">
+                    <mat-radio-button color="primary" class="activity-radio-button" *ngFor="let activityType of sanctionActiviytTypes"
+                      [value]="activityType">
+                      {{activityType}}
+                    </mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-control" *ngIf="sanctionActivityType.value=='Quote'||sanctionActivityType.value=='Placement'">
+              <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                  <label class="control-label">Policy Type</label>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-8">
+                  <mat-button-toggle-group value="New Policy" aria-label="Change color" formControlName="policyType">
+                    <mat-button-toggle id="primary" value="New Policy"> New Policy </mat-button-toggle>
+                    <mat-button-toggle id="secondary" value="Renewal"> Renewal </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-control" *ngIf="(sanctionActivityType.value=='Claim'||policyType.value=='Renewal')">
+              <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                  <label class="control-label">Policy number</label>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-8">
+                  <mat-form-field class="example-form-field">
+                    <input matInput type="text" placeholder="Policy Number" formControlName="policyNumber">
+                    <button mat-button *ngIf="policyNumber" matSuffix mat-icon-button aria-label="Clear" (click)="policyNumber=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-control" *ngIf="sanctionActivityType.value=='Claim'">
+              <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                  <label class="control-label">Claim Date</label>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-8">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="claimDatePicker" placeholder="Claim Date" formControlName="claimDate"
+                      required>
+                    <mat-datepicker-toggle matSuffix [for]="claimDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #claimDatePicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="stepper-control" *ngIf="sanctionActivityType.value=='Claim'">
+              <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                  <label class="control-label">Claim Details</label>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-8">
+                  <mat-form-field style="width:75%">
+                    <mat-label>Claim Details</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5" formControlName="claimDetails"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="form-button">
+              <button mat-raised-button color="primary" type="button" (click)="navigateTo(sanctionActivityType.value)"
+                matStepperNext>Next
+                Page
+              </button>
+            </div>
+          </mat-step>
+          <mat-step [stepControl]="sanctionTypeGroup" *ngIf="sanctionActivityType.value!='Consultancy'&&sanctionActivityType.value!='Payments'">
+            <ng-template matStepLabel>Sanction Type</ng-template>
+            <div class="stepper-control">
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <mat-form-field class="input-control">
+                    <mat-select placeholder="Sanction Type" formControlName="sanctionFormType">
+                      <mat-option *ngFor="let sanctionType of sanctionTypes" [value]="sanctionType">
+                        {{sanctionType}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row" *ngIf="sanctionFormType.value=='Insurance or Reinsurance Form'">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <mat-form-field class="input-control">
+                    <mat-select placeholder="Sanctioned country(ies)" formControlName="sanctionedCountry"
+                      (selectionChange)="checkUkraine(sanctionedCountry.value)" required multiple>
+                      <mat-option *ngFor="let country of sanctionedCountries" [value]="country">{{country}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!sanctionedCountry.value">
+                      Sanctioned countries <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row" *ngIf="ukraineExposure" style="margin-bottom:15px;">
+                <div class="col-md-12 col-sm-12 col-lg-6">
+                  <label class="control-label">If there is any exposure to Crimea/Sevastopol</label>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                  <mat-button-toggle-group value="crimeaExposure" aria-label="Change color" formControlName="crimeaExposure">
+                    <mat-button-toggle style="width:80px" id="primary" value="Yes"> Yes </mat-button-toggle>
+                    <mat-button-toggle style="width:80px" id="secondary" value="No"> No </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+              </div>
+              <div class="row" *ngIf="sanctionFormType.value=='Insurance or Reinsurance Form'">
+                <div class="col-md-12 col-sm-12 col-lg-6">
+                  <label class="control-label">Is the movement of Controlled Goods covered under this policy?</label>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                  <mat-button-toggle-group aria-label="Change color" value='No' formControlName="controlledGoodsInvolvement">
+                    <mat-button-toggle style="width:80px" id="primary" value="Yes"> Yes </mat-button-toggle>
+                    <mat-button-toggle style="width:80px" id="secondary" value="No"> No </mat-button-toggle>
+                  </mat-button-toggle-group>
+                                 </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+              <div class="form-button-left">
+                <button color="accent" mat-raised-button matStepperPrevious>Previous Page</button>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+              <div class="form-button-right">
+                <button mat-raised-button color="primary" (click)="navigateTo(sanctionFormType.value,sanctionedCountry.value,controlledGoodsInvolvement.value)"
+                  matStepperNext>Next Page</button>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step [ngSwitch]="sanctionTemplate">
+            <ng-template matStepLabel>{{sanctionFormType.value || sanctionActivityType.value}}</ng-template>
+            <div *ngIf="sanctionForms.length=='1' || sanctionActivityType.value=='Consultancy' || sanctionActivityType.value=='Payments'; then singleForm else multiForm"></div>
+            <ng-template #singleForm>
+              <app-standard-sanction *ngSwitchCase="'standardSanction'" (insuranceReinsuranceData)="formInitialized('insuranceReinsurance', $event)" [masterObject]='createSanctionGroup'></app-standard-sanction>
+              <app-iran-sanctions *ngSwitchCase="'iranSanction'"></app-iran-sanctions>
+              <app-controlled-goods *ngSwitchCase="'controlledGoods'" (insuranceReinsuranceData)="formInitialized('control', $event)"></app-controlled-goods>
+              <app-consultancy-services *ngIf="sanctionActivityType.value=='Consultancy'"></app-consultancy-services>
+              <app-payments *ngIf="sanctionActivityType.value=='Payments'"></app-payments>
+            </ng-template>
+            <ng-template #multiForm>
+              <mat-vertical-stepper [linear]="true" #stepper>
+                <mat-step *ngFor="let sanctionForm of sanctionForms" [stepControl]="sanctionForm" [label]="sanctionForm"
+                  [ngSwitch]="sanctionForm">
+                  <app-standard-sanction *ngSwitchCase="'Insurance or Reinsurance Form'" (insuranceReinsuranceData)="formInitialized('insuranceReinsurance', $event)"></app-standard-sanction>
+                  <app-iran-sanctions *ngSwitchCase="'Iran Transactions Form'"></app-iran-sanctions>
+                  <app-controlled-goods *ngSwitchCase="'Controlled Goods Form'" (insuranceReinsuranceData)="formInitialized('control', $event)"></app-controlled-goods>
+
+                </mat-step>
+                <!-- <app-standard-sanction *ngSwitchCase="'standardSanction'"></app-standard-sanction>
+                <app-iran-sanctions *ngSwitchCase="'iranSanction'"></app-iran-sanctions>
+                <app-controlled-goods *ngSwitchCase="'controlledGoods'"></app-controlled-goods>
+                <app-consultancy-services *ngIf="
+                    sanctionActivityType=='Consultancy'"></app-consultancy-services>
+                <app-payments *ngIf="
+                    sanctionActivityType=='Payments'"></app-payments> -->
+              </mat-vertical-stepper>
+            </ng-template>
+            <div class="
+                    col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+                    <div class="form-button-left">
+                      <button color="accent" mat-raised-button matStepperPrevious>Previous Page</button>
+                    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+    <div class="form-button-right">
+      <button mat-raised-button color="primary" matStepperNext (click)="navigateTo()">Review
+        Answer</button>
+    </div>
+  </div>
+  </mat-step>
+
+
+  <!-- <mat-step [ngSwitch]="sanctionTemplate">{{sanctionForms.length}}
+            <ng-template matStepLabel>{{sanctionFormType || sanctionActivityType}}</ng-template>
+            <app-standard-sanction *ngSwitchCase="'standardSanction'"></app-standard-sanction>
+            <app-iran-sanctions *ngSwitchCase="'iranSanction'"></app-iran-sanctions>
+            <app-controlled-goods *ngSwitchCase="'controlledGoods'"></app-controlled-goods>
+            <app-consultancy-services *ngIf="sanctionActivityType=='Consultancy'"></app-consultancy-services>
+            <app-payments *ngIf="sanctionActivityType=='Payments'"></app-payments>
+            <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+              <div class="form-button-left">
+                <button color="accent" mat-raised-button matStepperPrevious>Previous Page</button>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+              <div class="form-button-right">
+                <button mat-raised-button color="primary" matStepperNext>Review Answer</button>
+              </div>
+            </div>
+          </mat-step> -->
+  <mat-step [ngSwitch]="sanctionTemplate">
+    <ng-template matStepLabel>Review Answer</ng-template>
+    <app-standard-sanction-review [masterData]='createSanctionData'></app-standard-sanction-review>
+    <!-- <app-standard-sanction *ngSwitchCase="'standardSanction'" [formReview]="true"></app-standard-sanction>
+            <app-iran-sanctions *ngSwitchCase="'iranSanction'" [formReview]="true"></app-iran-sanctions>
+            <app-controlled-goods *ngSwitchCase="'controlledGoods'" [formReview]="true"></app-controlled-goods>
+            <app-consultancy-services *ngIf="sanctionActivityType=='Consultancy'" [formReview]="true"></app-consultancy-services>
+            <app-payments *ngIf="sanctionActivityType=='Payments'"></app-payments> -->
+    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-left:0px">
+      <div class="form-button-left">
+        <button color="accent" mat-raised-button matStepperPrevious>Previous Page</button>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6" style="padding-right:0px">
+      <div class="form-button-right">
+        <button (click)="stepper.reset()" class="btn btn-secondary">Reset</button>
+        <button mat-raised-button color="primary" matStepperNext>Submit</button>
+      </div>
+    </div>
+  </mat-step>
+  </mat-horizontal-stepper>{{createSanctionGroup.value|json}}
+<button (click)='assignData()'>click me</button>
+  </form>
+  </mat-card>
+</div>
+</div>

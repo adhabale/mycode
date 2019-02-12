@@ -1,0 +1,52 @@
+
+
+<form class="example-form">
+    <h1>Upload Document's</h1>
+    <div class="clearfix"></div> <br>
+
+<table class="table">
+  <tbody>
+    <tr style="color:#702082;">
+      <th style="width:2%"></th>
+      <th style="width:20%">Document</th>
+      <th style="width:20%">Uploaded By</th>
+      <th style="width:20%">Uploaded On</th>
+    </tr>
+    <tr>
+      <td><mat-checkbox color=primary></mat-checkbox></td>
+      <td  a class="anchor">Sample.txt</td>
+      <td>Rahul Jadhav</td>
+      <td>05/01/2019</td>
+    </tr>
+    <tr>
+        <td><mat-checkbox color=primary></mat-checkbox></td>
+      <td  a class="anchor">Sanctions.txt</td>
+      <td>Asha Borker</td>
+      <td>01/01/2018</td>
+
+    </tr>
+    <tr>
+      <td><mat-checkbox color=primary></mat-checkbox></td>
+      <td a class="anchor">Index.doc</td>
+      <td>Anjali Pokale</td>
+      <td>01/06/2019</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="form-button padding-10 text-align-right">
+  
+  <button class="btn-margin" mat-button form-button-right button cdkFocusInitial mat-raised-button color="secondary">Download All</button>
+  &nbsp;
+  <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">Add Document</button>
+  <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+  {{fileName}}
+</div>
+</form>
+<!-- <div style="border-bottom: 1px solid silver; margin-top: 10px; padding-bottom: 10px;" *ngIf="controlledGoodsInvolvement!='1'">
+    <button type="button" mat-raised-button color="primary" (click)="imgFileInput.click()">{{'buttons.uploadDoc'|translate}}</button>
+    <input hidden type="file" #imgFileInput multiple="multiple" (change)="preview($event)" />
+    {{fileName}}
+  </div> -->

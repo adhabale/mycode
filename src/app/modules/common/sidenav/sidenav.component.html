@@ -1,0 +1,58 @@
+<div class="left_col scroll-view">
+  <div class="navbar nav_title" style="border: 0;">
+    <div class="site_title">
+      <span>Sanctions Workflow</span>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <!-- menu profile quick info -->
+  <div class="profile clearfix">
+    <div class="profile_info">
+      <span style="font-size:17px;">Welcome,</span>
+      <h2 style="font-size:24px;">John Doe</h2>
+    </div>
+  </div>
+  <!-- /menu profile quick info -->
+
+  <!-- sidebar menu -->
+  <div id="sidebar-menu" class="main_menu_side main_menu">
+    <div class="menu_section">
+      <ul class="nav side-menu">
+        <li><a routerLink="home"  routerLinkActive="active">
+            <mat-icon class="material-font">home</mat-icon>
+            <span>Home</span>
+          </a>
+        </li>
+        <li><a>
+              <mat-icon class="material-font">airplay</mat-icon>
+               Work Queue <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a routerLink="my-workqueue" routerLinkActive="active">My Workqueue</a></li>
+            <li><a routerLink="my-team-workqueue" routerLinkActive="active">My Team Workqueue</a></li>
+          </ul>
+        <li *ngIf="!isSanctionUser()"><a routerLink="create-sanction" routerLinkActive="active">
+            <mat-icon class="material-font">note_add</mat-icon> New Sanctions Referral </a>
+        </li>
+        <li><a>
+            <mat-icon class="material-font">bar_chart</mat-icon> Reports <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a routerLink="default-page" routerLinkActive="active">Report A</a></li>
+            <li><a routerLink="default-page" routerLinkActive="active">Report B</a></li>
+          </ul>
+        </li>
+        <li><a>
+            <mat-icon class="material-font">account_box</mat-icon>Admin <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a routerLink="business-unit" routerLinkActive="active">Business-Unit Information</a></li>
+            <li><a routerLink="legal-entity" routerLinkActive="active">WTW Legal Entity</a></li>
+            <li><a routerLink="insurance-type" routerLinkActive="active">Insurance Type</a></li>
+            <li><a routerLink="app-country" routerLinkActive="active">Country </a></li>
+            <li><a routerLink="app-user" routerLinkActive="active">Users</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

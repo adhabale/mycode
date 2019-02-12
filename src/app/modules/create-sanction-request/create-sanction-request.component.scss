@@ -1,0 +1,13 @@
+@import "../SanctionForms/sanction-forms.scss";
+
+.activity-radio-group{
+    display: inline-flex;
+    flex-direction: column;
+  }
+.activity-radio-button {
+    margin: 5px;
+  }
+
+.stepper-control{
+    margin-top: 30px;
+}

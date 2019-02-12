@@ -1,0 +1,21 @@
+.menu_icon{
+    display: inline-flex;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+.menu_text{
+    flex: 1 1 auto;
+    padding: 0 16px;
+    min-width: 0;
+}
+.clearfix{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3)!important;
+        border-width: calc(100% - 30px)!important;
+    margin-left: 15px!important;
+    margin-right: 15px!important;
+}
+.material-font{
+    font-size: 18px!important;
+    vertical-align: sub!important;
+}
+
